@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\development\visual studio\HRaPS\HRaPS\HRaPS\obj\Debug\
+C:\Users\mis-cvm\Desktop\ccwd-hraps\HRaPS\obj\Debug\
 HRaPS
 none
 false
 DEBUG;TRACE
-D:\development\visual studio\HRaPS\HRaPS\HRaPS\App.xaml
+C:\Users\mis-cvm\Desktop\ccwd-hraps\HRaPS\App.xaml
 8-833274511
 
 47-1448699068
-19-2106346845
+191380009934
 HR\view\employee\Create.xaml;HR\view\employee\Employee.xaml;HR\view\employee\Update.xaml;HR\view\employee\View.xaml;HR\view\main.xaml;login.xaml;Menu.xaml;Resources\Icons.xaml;
 
-False
+True
 

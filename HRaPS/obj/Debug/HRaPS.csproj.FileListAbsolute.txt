@@ -59,3 +59,6 @@ D:\development\visual studio\HRaPS\HRaPS\HRaPS\obj\Debug\Resources\Icons.g.cs
 D:\development\visual studio\HRaPS\HRaPS\HRaPS\obj\Debug\HR\view\employee\Employee.baml
 D:\development\visual studio\HRaPS\HRaPS\HRaPS\obj\Debug\HR\view\employee\Employee.g.cs
 D:\development\visual studio\HRaPS\HRaPS\HRaPS\obj\Debug\HRaPS_MarkupCompile.lref
+C:\Users\mis-cvm\Desktop\ccwd-hraps\HRaPS\bin\Debug\HRaPS.exe.config
+C:\Users\mis-cvm\Desktop\ccwd-hraps\HRaPS\obj\Debug\HRaPS.exe
+C:\Users\mis-cvm\Desktop\ccwd-hraps\HRaPS\obj\Debug\HRaPS.pdb
