@@ -1,0 +1,777 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PAWDModelStoreContainer" CdmEntityContainer="PAWDEntities">
+    <EntitySetMapping Name="banks">
+      <EntityTypeMapping TypeName="PAWDModel.bank">
+        <MappingFragment StoreEntitySet="bank">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="acro" ColumnName="acro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bundle_type">
+      <EntityTypeMapping TypeName="PAWDModel.bundle_type">
+        <MappingFragment StoreEntitySet="bundle_type">
+          <ScalarProperty Name="bundleType" ColumnName="bundleType" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="candidates">
+      <EntityTypeMapping TypeName="PAWDModel.candidate">
+        <MappingFragment StoreEntitySet="candidate">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="pos_id" ColumnName="pos_id" />
+          <ScalarProperty Name="wd" ColumnName="wd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="candidate_position">
+      <EntityTypeMapping TypeName="PAWDModel.candidate_position">
+        <MappingFragment StoreEntitySet="candidate_position">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="districts">
+      <EntityTypeMapping TypeName="PAWDModel.district">
+        <MappingFragment StoreEntitySet="district">
+          <ScalarProperty Name="districtID" ColumnName="districtID" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="region" ColumnName="region" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="official_receipt">
+      <EntityTypeMapping TypeName="PAWDModel.official_receipt">
+        <MappingFragment StoreEntitySet="official_receipt">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="orNo" ColumnName="orNo" />
+          <ScalarProperty Name="districtID" ColumnName="districtID" />
+          <ScalarProperty Name="dDate" ColumnName="dDate" />
+          <ScalarProperty Name="nAmount" ColumnName="nAmount" />
+          <ScalarProperty Name="sPeso" ColumnName="sPeso" />
+          <ScalarProperty Name="sBank" ColumnName="sBank" />
+          <ScalarProperty Name="sCheckNo" ColumnName="sCheckNo" />
+          <ScalarProperty Name="dDateIssued" ColumnName="dDateIssued" />
+          <ScalarProperty Name="nType" ColumnName="nType" />
+          <ScalarProperty Name="bundleType" ColumnName="bundleType" />
+          <ScalarProperty Name="nTotal" ColumnName="nTotal" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="nCancel" ColumnName="nCancel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="or_particular">
+      <EntityTypeMapping TypeName="PAWDModel.or_particular">
+        <MappingFragment StoreEntitySet="or_particular">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="orNo" ColumnName="orNo" />
+          <ScalarProperty Name="transaction_id" ColumnName="transaction_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="or_person">
+      <EntityTypeMapping TypeName="PAWDModel.or_person">
+        <MappingFragment StoreEntitySet="or_person">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="orNo" ColumnName="orNo" />
+          <ScalarProperty Name="visitorID" ColumnName="visitorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="positions">
+      <EntityTypeMapping TypeName="PAWDModel.position">
+        <MappingFragment StoreEntitySet="position">
+          <ScalarProperty Name="sPositionID" ColumnName="sPositionID" />
+          <ScalarProperty Name="Position1" ColumnName="Position" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="regions">
+      <EntityTypeMapping TypeName="PAWDModel.region">
+        <MappingFragment StoreEntitySet="region">
+          <ScalarProperty Name="regionID" ColumnName="regionID" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transactions">
+      <EntityTypeMapping TypeName="PAWDModel.transaction">
+        <MappingFragment StoreEntitySet="transaction">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="nAmount" ColumnName="nAmount" />
+          <ScalarProperty Name="acro" ColumnName="acro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transaction_type">
+      <EntityTypeMapping TypeName="PAWDModel.transaction_type">
+        <MappingFragment StoreEntitySet="transaction_type">
+          <ScalarProperty Name="nType" ColumnName="nType" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="PAWDModel.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="orNo" ColumnName="orNo" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_access">
+      <EntityTypeMapping TypeName="PAWDModel.user_access">
+        <MappingFragment StoreEntitySet="user_access">
+          <ScalarProperty Name="int" ColumnName="int" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="access" ColumnName="access" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="visitors">
+      <EntityTypeMapping TypeName="PAWDModel.visitor">
+        <MappingFragment StoreEntitySet="visitor">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fName" ColumnName="fName" />
+          <ScalarProperty Name="mName" ColumnName="mName" />
+          <ScalarProperty Name="lName" ColumnName="lName" />
+          <ScalarProperty Name="nName" ColumnName="nName" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="districtID" ColumnName="districtID" />
+          <ScalarProperty Name="nNum" ColumnName="nNum" />
+          <ScalarProperty Name="preReg" ColumnName="preReg" />
+          <ScalarProperty Name="withPay" ColumnName="withPay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="voters">
+      <EntityTypeMapping TypeName="PAWDModel.voter">
+        <MappingFragment StoreEntitySet="voter">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="visitorID" ColumnName="visitorID" />
+          <ScalarProperty Name="nVote" ColumnName="nVote" />
+          <ScalarProperty Name="candidateID" ColumnName="candidateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="votes">
+      <EntityTypeMapping TypeName="PAWDModel.vote">
+        <MappingFragment StoreEntitySet="votes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="candidateID" ColumnName="candidateID" />
+          <ScalarProperty Name="voterID" ColumnName="voterID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="access_validation" FunctionName="PAWDModel.Store.access_validation">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.access_validation_Result">
+          <ScalarProperty Name="access_registration" ColumnName="access_registration" />
+          <ScalarProperty Name="access_billing" ColumnName="access_billing" />
+          <ScalarProperty Name="access_id" ColumnName="access_id" />
+          <ScalarProperty Name="access_voting" ColumnName="access_voting" />
+          <ScalarProperty Name="access_raffle" ColumnName="access_raffle" />
+          <ScalarProperty Name="access_reports" ColumnName="access_reports" />
+          <ScalarProperty Name="access_settings" ColumnName="access_settings" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="cancelOR" FunctionName="PAWDModel.Store.cancelOR" />
+    <FunctionImportMapping FunctionImportName="changeOR" FunctionName="PAWDModel.Store.changeOR" />
+    <FunctionImportMapping FunctionImportName="deleteVisitor" FunctionName="PAWDModel.Store.deleteVisitor" />
+    <FunctionImportMapping FunctionImportName="drawRaffle" FunctionName="PAWDModel.Store.drawRaffle">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.drawRaffle_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="sFullname" ColumnName="sFullname" />
+          <ScalarProperty Name="sWD" ColumnName="sWD" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="fastUpdate" FunctionName="PAWDModel.Store.fastUpdate" />
+    <FunctionImportMapping FunctionImportName="insertOfficial_Receipt" FunctionName="PAWDModel.Store.insertOfficial_Receipt" />
+    <FunctionImportMapping FunctionImportName="insertOR_Particular" FunctionName="PAWDModel.Store.insertOR_Particular" />
+    <FunctionImportMapping FunctionImportName="insertOR_Person" FunctionName="PAWDModel.Store.insertOR_Person" />
+    <FunctionImportMapping FunctionImportName="insertPosition" FunctionName="PAWDModel.Store.insertPosition" />
+    <FunctionImportMapping FunctionImportName="insertUser" FunctionName="PAWDModel.Store.insertUser" />
+    <FunctionImportMapping FunctionImportName="insertUser_Access" FunctionName="PAWDModel.Store.insertUser_Access" />
+    <FunctionImportMapping FunctionImportName="insertVisitor" FunctionName="PAWDModel.Store.insertVisitor" />
+    <FunctionImportMapping FunctionImportName="insertVoter" FunctionName="PAWDModel.Store.insertVoter" />
+    <FunctionImportMapping FunctionImportName="login" FunctionName="PAWDModel.Store.login">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.login_Result">
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="orNo" ColumnName="orNo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="rptByAll" FunctionName="PAWDModel.Store.rptByAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.rptByAll_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="orNo" ColumnName="orNo" />
+          <ScalarProperty Name="visitorID" ColumnName="visitorID" />
+          <ScalarProperty Name="id1" ColumnName="id1" />
+          <ScalarProperty Name="orNo1" ColumnName="orNo1" />
+          <ScalarProperty Name="districtID" ColumnName="districtID" />
+          <ScalarProperty Name="dDate" ColumnName="dDate" />
+          <ScalarProperty Name="nAmount" ColumnName="nAmount" />
+          <ScalarProperty Name="sPeso" ColumnName="sPeso" />
+          <ScalarProperty Name="sBank" ColumnName="sBank" />
+          <ScalarProperty Name="sCheckNo" ColumnName="sCheckNo" />
+          <ScalarProperty Name="dDateIssued" ColumnName="dDateIssued" />
+          <ScalarProperty Name="nType" ColumnName="nType" />
+          <ScalarProperty Name="bundleType" ColumnName="bundleType" />
+          <ScalarProperty Name="nTotal" ColumnName="nTotal" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="nCancel" ColumnName="nCancel" />
+          <ScalarProperty Name="sFullname" ColumnName="sFullname" />
+          <ScalarProperty Name="c" ColumnName="c" />
+          <ScalarProperty Name="districtName" ColumnName="districtName" />
+          <ScalarProperty Name="nRow" ColumnName="nRow" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="rptByAllSummary" FunctionName="PAWDModel.Store.rptByAllSummary">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.rptByAllSummary_Result">
+          <ScalarProperty Name="districtID" ColumnName="districtID" />
+          <ScalarProperty Name="districtName" ColumnName="districtName" />
+          <ScalarProperty Name="region" ColumnName="region" />
+          <ScalarProperty Name="noDeligates" ColumnName="noDeligates" />
+          <ScalarProperty Name="nTotal" ColumnName="nTotal" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="rptByBank" FunctionName="PAWDModel.Store.rptByBank">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.rptByBank_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="orNo" ColumnName="orNo" />
+          <ScalarProperty Name="visitorID" ColumnName="visitorID" />
+          <ScalarProperty Name="id1" ColumnName="id1" />
+          <ScalarProperty Name="orNo1" ColumnName="orNo1" />
+          <ScalarProperty Name="districtID" ColumnName="districtID" />
+          <ScalarProperty Name="dDate" ColumnName="dDate" />
+          <ScalarProperty Name="nAmount" ColumnName="nAmount" />
+          <ScalarProperty Name="sPeso" ColumnName="sPeso" />
+          <ScalarProperty Name="sBank" ColumnName="sBank" />
+          <ScalarProperty Name="sCheckNo" ColumnName="sCheckNo" />
+          <ScalarProperty Name="dDateIssued" ColumnName="dDateIssued" />
+          <ScalarProperty Name="nType" ColumnName="nType" />
+          <ScalarProperty Name="bundleType" ColumnName="bundleType" />
+          <ScalarProperty Name="nTotal" ColumnName="nTotal" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="nCancel" ColumnName="nCancel" />
+          <ScalarProperty Name="bankName" ColumnName="bankName" />
+          <ScalarProperty Name="sFullname" ColumnName="sFullname" />
+          <ScalarProperty Name="c" ColumnName="c" />
+          <ScalarProperty Name="districtName" ColumnName="districtName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="rptByBankSummary" FunctionName="PAWDModel.Store.rptByBankSummary">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.rptByBankSummary_Result">
+          <ScalarProperty Name="districtID" ColumnName="districtID" />
+          <ScalarProperty Name="bankName" ColumnName="bankName" />
+          <ScalarProperty Name="districtName" ColumnName="districtName" />
+          <ScalarProperty Name="region" ColumnName="region" />
+          <ScalarProperty Name="noDeligates" ColumnName="noDeligates" />
+          <ScalarProperty Name="nTotal" ColumnName="nTotal" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="rptByBundle" FunctionName="PAWDModel.Store.rptByBundle">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.rptByBundle_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="orNo" ColumnName="orNo" />
+          <ScalarProperty Name="visitorID" ColumnName="visitorID" />
+          <ScalarProperty Name="id1" ColumnName="id1" />
+          <ScalarProperty Name="orNo1" ColumnName="orNo1" />
+          <ScalarProperty Name="districtID" ColumnName="districtID" />
+          <ScalarProperty Name="dDate" ColumnName="dDate" />
+          <ScalarProperty Name="nAmount" ColumnName="nAmount" />
+          <ScalarProperty Name="sPeso" ColumnName="sPeso" />
+          <ScalarProperty Name="sBank" ColumnName="sBank" />
+          <ScalarProperty Name="sCheckNo" ColumnName="sCheckNo" />
+          <ScalarProperty Name="dDateIssued" ColumnName="dDateIssued" />
+          <ScalarProperty Name="nType" ColumnName="nType" />
+          <ScalarProperty Name="bundleType" ColumnName="bundleType" />
+          <ScalarProperty Name="nTotal" ColumnName="nTotal" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="nCancel" ColumnName="nCancel" />
+          <ScalarProperty Name="sFullname" ColumnName="sFullname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="rptByCounter" FunctionName="PAWDModel.Store.rptByCounter">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.rptByCounter_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="orNo" ColumnName="orNo" />
+          <ScalarProperty Name="visitorID" ColumnName="visitorID" />
+          <ScalarProperty Name="id1" ColumnName="id1" />
+          <ScalarProperty Name="orNo1" ColumnName="orNo1" />
+          <ScalarProperty Name="districtID" ColumnName="districtID" />
+          <ScalarProperty Name="dDate" ColumnName="dDate" />
+          <ScalarProperty Name="nAmount" ColumnName="nAmount" />
+          <ScalarProperty Name="sPeso" ColumnName="sPeso" />
+          <ScalarProperty Name="sBank" ColumnName="sBank" />
+          <ScalarProperty Name="sCheckNo" ColumnName="sCheckNo" />
+          <ScalarProperty Name="dDateIssued" ColumnName="dDateIssued" />
+          <ScalarProperty Name="nType" ColumnName="nType" />
+          <ScalarProperty Name="bundleType" ColumnName="bundleType" />
+          <ScalarProperty Name="nTotal" ColumnName="nTotal" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="nCancel" ColumnName="nCancel" />
+          <ScalarProperty Name="sFullname" ColumnName="sFullname" />
+          <ScalarProperty Name="c" ColumnName="c" />
+          <ScalarProperty Name="districtName" ColumnName="districtName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="rptByCounterSummary" FunctionName="PAWDModel.Store.rptByCounterSummary">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.rptByCounterSummary_Result">
+          <ScalarProperty Name="districtID" ColumnName="districtID" />
+          <ScalarProperty Name="counterUser" ColumnName="counterUser" />
+          <ScalarProperty Name="districtName" ColumnName="districtName" />
+          <ScalarProperty Name="region" ColumnName="region" />
+          <ScalarProperty Name="noDeligates" ColumnName="noDeligates" />
+          <ScalarProperty Name="nTotal" ColumnName="nTotal" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="rptByDate" FunctionName="PAWDModel.Store.rptByDate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.rptByDate_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="orNo" ColumnName="orNo" />
+          <ScalarProperty Name="visitorID" ColumnName="visitorID" />
+          <ScalarProperty Name="id1" ColumnName="id1" />
+          <ScalarProperty Name="orNo1" ColumnName="orNo1" />
+          <ScalarProperty Name="districtID" ColumnName="districtID" />
+          <ScalarProperty Name="dDate" ColumnName="dDate" />
+          <ScalarProperty Name="nAmount" ColumnName="nAmount" />
+          <ScalarProperty Name="sPeso" ColumnName="sPeso" />
+          <ScalarProperty Name="sBank" ColumnName="sBank" />
+          <ScalarProperty Name="sCheckNo" ColumnName="sCheckNo" />
+          <ScalarProperty Name="dDateIssued" ColumnName="dDateIssued" />
+          <ScalarProperty Name="nType" ColumnName="nType" />
+          <ScalarProperty Name="bundleType" ColumnName="bundleType" />
+          <ScalarProperty Name="nTotal" ColumnName="nTotal" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="nCancel" ColumnName="nCancel" />
+          <ScalarProperty Name="sFullname" ColumnName="sFullname" />
+          <ScalarProperty Name="c" ColumnName="c" />
+          <ScalarProperty Name="districtName" ColumnName="districtName" />
+          <ScalarProperty Name="dStart" ColumnName="dStart" />
+          <ScalarProperty Name="dEnd" ColumnName="dEnd" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="rptByDateSummary" FunctionName="PAWDModel.Store.rptByDateSummary">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.rptByDateSummary_Result">
+          <ScalarProperty Name="districtID" ColumnName="districtID" />
+          <ScalarProperty Name="districtName" ColumnName="districtName" />
+          <ScalarProperty Name="region" ColumnName="region" />
+          <ScalarProperty Name="noDeligates" ColumnName="noDeligates" />
+          <ScalarProperty Name="nTotal" ColumnName="nTotal" />
+          <ScalarProperty Name="dStart" ColumnName="dStart" />
+          <ScalarProperty Name="dEnd" ColumnName="dEnd" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="rptByDistrict" FunctionName="PAWDModel.Store.rptByDistrict">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.rptByDistrict_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="orNo" ColumnName="orNo" />
+          <ScalarProperty Name="visitorID" ColumnName="visitorID" />
+          <ScalarProperty Name="id1" ColumnName="id1" />
+          <ScalarProperty Name="orNo1" ColumnName="orNo1" />
+          <ScalarProperty Name="districtID" ColumnName="districtID" />
+          <ScalarProperty Name="dDate" ColumnName="dDate" />
+          <ScalarProperty Name="nAmount" ColumnName="nAmount" />
+          <ScalarProperty Name="sPeso" ColumnName="sPeso" />
+          <ScalarProperty Name="sBank" ColumnName="sBank" />
+          <ScalarProperty Name="sCheckNo" ColumnName="sCheckNo" />
+          <ScalarProperty Name="dDateIssued" ColumnName="dDateIssued" />
+          <ScalarProperty Name="nType" ColumnName="nType" />
+          <ScalarProperty Name="bundleType" ColumnName="bundleType" />
+          <ScalarProperty Name="nTotal" ColumnName="nTotal" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="nCancel" ColumnName="nCancel" />
+          <ScalarProperty Name="sFullname" ColumnName="sFullname" />
+          <ScalarProperty Name="c" ColumnName="c" />
+          <ScalarProperty Name="districtName" ColumnName="districtName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="rptByDistrictSummary" FunctionName="PAWDModel.Store.rptByDistrictSummary">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.rptByDistrictSummary_Result">
+          <ScalarProperty Name="districtName" ColumnName="districtName" />
+          <ScalarProperty Name="region" ColumnName="region" />
+          <ScalarProperty Name="noDeligates" ColumnName="noDeligates" />
+          <ScalarProperty Name="nTotal" ColumnName="nTotal" />
+          <ScalarProperty Name="districtName1" ColumnName="districtName1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="rptByRegion" FunctionName="PAWDModel.Store.rptByRegion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.rptByRegion_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="orNo" ColumnName="orNo" />
+          <ScalarProperty Name="visitorID" ColumnName="visitorID" />
+          <ScalarProperty Name="id1" ColumnName="id1" />
+          <ScalarProperty Name="orNo1" ColumnName="orNo1" />
+          <ScalarProperty Name="districtID" ColumnName="districtID" />
+          <ScalarProperty Name="dDate" ColumnName="dDate" />
+          <ScalarProperty Name="nAmount" ColumnName="nAmount" />
+          <ScalarProperty Name="sPeso" ColumnName="sPeso" />
+          <ScalarProperty Name="sBank" ColumnName="sBank" />
+          <ScalarProperty Name="sCheckNo" ColumnName="sCheckNo" />
+          <ScalarProperty Name="dDateIssued" ColumnName="dDateIssued" />
+          <ScalarProperty Name="nType" ColumnName="nType" />
+          <ScalarProperty Name="bundleType" ColumnName="bundleType" />
+          <ScalarProperty Name="nTotal" ColumnName="nTotal" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="nCancel" ColumnName="nCancel" />
+          <ScalarProperty Name="id2" ColumnName="id2" />
+          <ScalarProperty Name="fName" ColumnName="fName" />
+          <ScalarProperty Name="mName" ColumnName="mName" />
+          <ScalarProperty Name="lName" ColumnName="lName" />
+          <ScalarProperty Name="nName" ColumnName="nName" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="districtID1" ColumnName="districtID1" />
+          <ScalarProperty Name="nNum" ColumnName="nNum" />
+          <ScalarProperty Name="preReg" ColumnName="preReg" />
+          <ScalarProperty Name="withPay" ColumnName="withPay" />
+          <ScalarProperty Name="districtID2" ColumnName="districtID2" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="region" ColumnName="region" />
+          <ScalarProperty Name="sFullname" ColumnName="sFullname" />
+          <ScalarProperty Name="c" ColumnName="c" />
+          <ScalarProperty Name="regionName" ColumnName="regionName" />
+          <ScalarProperty Name="districtName" ColumnName="districtName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="rptByRegionSummary" FunctionName="PAWDModel.Store.rptByRegionSummary">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.rptByRegionSummary_Result">
+          <ScalarProperty Name="districtID" ColumnName="districtID" />
+          <ScalarProperty Name="districtName" ColumnName="districtName" />
+          <ScalarProperty Name="region" ColumnName="region" />
+          <ScalarProperty Name="noDeligates" ColumnName="noDeligates" />
+          <ScalarProperty Name="nTotal" ColumnName="nTotal" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="rptID" FunctionName="PAWDModel.Store.rptID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.rptID_Result">
+          <ScalarProperty Name="nickName" ColumnName="nickName" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="district" ColumnName="district" />
+          <ScalarProperty Name="position" ColumnName="position" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="rptPollSummary" FunctionName="PAWDModel.Store.rptPollSummary">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.rptPollSummary_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="visitorID" ColumnName="visitorID" />
+          <ScalarProperty Name="nVote" ColumnName="nVote" />
+          <ScalarProperty Name="candidateID" ColumnName="candidateID" />
+          <ScalarProperty Name="id1" ColumnName="id1" />
+          <ScalarProperty Name="fName" ColumnName="fName" />
+          <ScalarProperty Name="mName" ColumnName="mName" />
+          <ScalarProperty Name="lName" ColumnName="lName" />
+          <ScalarProperty Name="nName" ColumnName="nName" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="districtID" ColumnName="districtID" />
+          <ScalarProperty Name="nNum" ColumnName="nNum" />
+          <ScalarProperty Name="preReg" ColumnName="preReg" />
+          <ScalarProperty Name="withPay" ColumnName="withPay" />
+          <ScalarProperty Name="id2" ColumnName="id2" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="pos_id" ColumnName="pos_id" />
+          <ScalarProperty Name="wd" ColumnName="wd" />
+          <ScalarProperty Name="sFullname" ColumnName="sFullname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="rptWinner" FunctionName="PAWDModel.Store.rptWinner">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.rptWinner_Result">
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="wd" ColumnName="wd" />
+          <ScalarProperty Name="noVotes" ColumnName="noVotes" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="searchOR" FunctionName="PAWDModel.Store.searchOR">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.searchOR_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="orNo" ColumnName="orNo" />
+          <ScalarProperty Name="lName" ColumnName="lName" />
+          <ScalarProperty Name="districtID" ColumnName="districtID" />
+          <ScalarProperty Name="dDate" ColumnName="dDate" />
+          <ScalarProperty Name="nAmount" ColumnName="nAmount" />
+          <ScalarProperty Name="sPeso" ColumnName="sPeso" />
+          <ScalarProperty Name="sBank" ColumnName="sBank" />
+          <ScalarProperty Name="sCheckNo" ColumnName="sCheckNo" />
+          <ScalarProperty Name="dDateIssued" ColumnName="dDateIssued" />
+          <ScalarProperty Name="nType" ColumnName="nType" />
+          <ScalarProperty Name="bundleType" ColumnName="bundleType" />
+          <ScalarProperty Name="nTotal" ColumnName="nTotal" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="nCancel" ColumnName="nCancel" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="visitorID" ColumnName="visitorID" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="fName" ColumnName="fName" />
+          <ScalarProperty Name="mName" ColumnName="mName" />
+          <ScalarProperty Name="nName" ColumnName="nName" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+          <ScalarProperty Name="nNum" ColumnName="nNum" />
+          <ScalarProperty Name="preReg" ColumnName="preReg" />
+          <ScalarProperty Name="withPay" ColumnName="withPay" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sendVote" FunctionName="PAWDModel.Store.sendVote" />
+    <FunctionImportMapping FunctionImportName="updateOR" FunctionName="PAWDModel.Store.updateOR" />
+    <FunctionImportMapping FunctionImportName="updateVisitor" FunctionName="PAWDModel.Store.updateVisitor" />
+    <FunctionImportMapping FunctionImportName="updateWithPay" FunctionName="PAWDModel.Store.updateWithPay" />
+    <FunctionImportMapping FunctionImportName="viewAccess_type" FunctionName="PAWDModel.Store.viewAccess_type">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.viewAccess_type_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="isSelect" ColumnName="isSelect" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="viewBank" FunctionName="PAWDModel.Store.viewBank">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.viewBank_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="acro" ColumnName="acro" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="viewCandidate" FunctionName="PAWDModel.Store.viewCandidate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.viewCandidate_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="pos_id" ColumnName="pos_id" />
+          <ScalarProperty Name="wd" ColumnName="wd" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="viewCurrentVoter" FunctionName="PAWDModel.Store.viewCurrentVoter">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.viewCurrentVoter_Result">
+          <ScalarProperty Name="visitorID" ColumnName="visitorID" />
+          <ScalarProperty Name="sFullname" ColumnName="sFullname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="viewDistrict" FunctionName="PAWDModel.Store.viewDistrict">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.viewDistrict_Result">
+          <ScalarProperty Name="districtID" ColumnName="districtID" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="viewOR" FunctionName="PAWDModel.Store.viewOR">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.viewOR_Result">
+          <ScalarProperty Name="dDate" ColumnName="dDate" />
+          <ScalarProperty Name="receivedFrom" ColumnName="receivedFrom" />
+          <ScalarProperty Name="sPeso" ColumnName="sPeso" />
+          <ScalarProperty Name="nTotal" ColumnName="nTotal" />
+          <ScalarProperty Name="payment" ColumnName="payment" />
+          <ScalarProperty Name="sCheckNo" ColumnName="sCheckNo" />
+          <ScalarProperty Name="sBank" ColumnName="sBank" />
+          <ScalarProperty Name="dDateIssued" ColumnName="dDateIssued" />
+          <ScalarProperty Name="bundleType" ColumnName="bundleType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="viewORforID" FunctionName="PAWDModel.Store.viewORforID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.viewORforID_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="orNo" ColumnName="orNo" />
+          <ScalarProperty Name="districtID" ColumnName="districtID" />
+          <ScalarProperty Name="dDate" ColumnName="dDate" />
+          <ScalarProperty Name="nAmount" ColumnName="nAmount" />
+          <ScalarProperty Name="sPeso" ColumnName="sPeso" />
+          <ScalarProperty Name="sBank" ColumnName="sBank" />
+          <ScalarProperty Name="sCheckNo" ColumnName="sCheckNo" />
+          <ScalarProperty Name="dDateIssued" ColumnName="dDateIssued" />
+          <ScalarProperty Name="nType" ColumnName="nType" />
+          <ScalarProperty Name="bundleType" ColumnName="bundleType" />
+          <ScalarProperty Name="nTotal" ColumnName="nTotal" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="nCancel" ColumnName="nCancel" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="viewORParticular" FunctionName="PAWDModel.Store.viewORParticular">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.viewORParticular_Result">
+          <ScalarProperty Name="orNo" ColumnName="orNo" />
+          <ScalarProperty Name="particulars" ColumnName="particulars" />
+          <ScalarProperty Name="nAmount" ColumnName="nAmount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="viewParticulars" FunctionName="PAWDModel.Store.viewParticulars">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.viewParticulars_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="nAmount" ColumnName="nAmount" />
+          <ScalarProperty Name="acro" ColumnName="acro" />
+          <ScalarProperty Name="isSelect" ColumnName="isSelect" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="viewPosition" FunctionName="PAWDModel.Store.viewPosition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.viewPosition_Result">
+          <ScalarProperty Name="sPositionID" ColumnName="sPositionID" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="viewRaffle" FunctionName="PAWDModel.Store.viewRaffle">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.viewRaffle_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="sFullname" ColumnName="sFullname" />
+          <ScalarProperty Name="sWD" ColumnName="sWD" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="viewRegion" FunctionName="PAWDModel.Store.viewRegion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.viewRegion_Result">
+          <ScalarProperty Name="regionID" ColumnName="regionID" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="viewTransaction" FunctionName="PAWDModel.Store.viewTransaction">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.viewTransaction_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="nAmount" ColumnName="nAmount" />
+          <ScalarProperty Name="acro" ColumnName="acro" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="viewVisitor" FunctionName="PAWDModel.Store.viewVisitor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.viewVisitor_Result">
+          <ScalarProperty Name="sFullname" ColumnName="sFullname" />
+          <ScalarProperty Name="lName" ColumnName="lName" />
+          <ScalarProperty Name="fName" ColumnName="fName" />
+          <ScalarProperty Name="mName" ColumnName="mName" />
+          <ScalarProperty Name="nName" ColumnName="nName" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="districtID" ColumnName="districtID" />
+          <ScalarProperty Name="sWD" ColumnName="sWD" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="viewVisitorByDistrict" FunctionName="PAWDModel.Store.viewVisitorByDistrict">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.viewVisitorByDistrict_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fName" ColumnName="fName" />
+          <ScalarProperty Name="mName" ColumnName="mName" />
+          <ScalarProperty Name="lName" ColumnName="lName" />
+          <ScalarProperty Name="nName" ColumnName="nName" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="districtID" ColumnName="districtID" />
+          <ScalarProperty Name="nNum" ColumnName="nNum" />
+          <ScalarProperty Name="preReg" ColumnName="preReg" />
+          <ScalarProperty Name="withPay" ColumnName="withPay" />
+          <ScalarProperty Name="sFullname" ColumnName="sFullname" />
+          <ScalarProperty Name="isSelect" ColumnName="isSelect" />
+          <ScalarProperty Name="nRow" ColumnName="nRow" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="viewVisitorFilter" FunctionName="PAWDModel.Store.viewVisitorFilter">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.viewVisitorFilter_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="sFullname" ColumnName="sFullname" />
+          <ScalarProperty Name="lName" ColumnName="lName" />
+          <ScalarProperty Name="fName" ColumnName="fName" />
+          <ScalarProperty Name="mName" ColumnName="mName" />
+          <ScalarProperty Name="nName" ColumnName="nName" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="preReg" ColumnName="preReg" />
+          <ScalarProperty Name="paid" ColumnName="paid" />
+          <ScalarProperty Name="districtID" ColumnName="districtID" />
+          <ScalarProperty Name="sWD" ColumnName="sWD" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="viewVisitorInDistrict" FunctionName="PAWDModel.Store.viewVisitorInDistrict">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.viewVisitorInDistrict_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fName" ColumnName="fName" />
+          <ScalarProperty Name="mName" ColumnName="mName" />
+          <ScalarProperty Name="lName" ColumnName="lName" />
+          <ScalarProperty Name="nName" ColumnName="nName" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="districtID" ColumnName="districtID" />
+          <ScalarProperty Name="nNum" ColumnName="nNum" />
+          <ScalarProperty Name="preReg" ColumnName="preReg" />
+          <ScalarProperty Name="withPay" ColumnName="withPay" />
+          <ScalarProperty Name="sFullname" ColumnName="sFullname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="viewWinner" FunctionName="PAWDModel.Store.viewWinner">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PAWDModel.viewWinner_Result">
+          <ScalarProperty Name="pres1" ColumnName="pres1" />
+          <ScalarProperty Name="pres2" ColumnName="pres2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

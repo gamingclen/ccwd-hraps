@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HRaPSModelStoreContainer" CdmEntityContainer="HRaPSEntities">
+    <EntitySetMapping Name="children">
+      <EntityTypeMapping TypeName="HRaPSModel.child">
+        <MappingFragment StoreEntitySet="children">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="empID" ColumnName="empID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="civil_status">
+      <EntityTypeMapping TypeName="HRaPSModel.civil_status">
+        <MappingFragment StoreEntitySet="civil_status">
+          <ScalarProperty Name="civil_status1" ColumnName="civil_status" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="divisions">
+      <EntityTypeMapping TypeName="HRaPSModel.division">
+        <MappingFragment StoreEntitySet="division">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="educations">
+      <EntityTypeMapping TypeName="HRaPSModel.education">
+        <MappingFragment StoreEntitySet="education">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="empID" ColumnName="empID" />
+          <ScalarProperty Name="nLevel" ColumnName="nLevel" />
+          <ScalarProperty Name="name_of_school" ColumnName="name_of_school" />
+          <ScalarProperty Name="degree_course" ColumnName="degree_course" />
+          <ScalarProperty Name="year_graduated" ColumnName="year_graduated" />
+          <ScalarProperty Name="units_earned" ColumnName="units_earned" />
+          <ScalarProperty Name="dFrom" ColumnName="dFrom" />
+          <ScalarProperty Name="dTo" ColumnName="dTo" />
+          <ScalarProperty Name="honors_received" ColumnName="honors_received" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="eligibilities">
+      <EntityTypeMapping TypeName="HRaPSModel.eligibility">
+        <MappingFragment StoreEntitySet="eligibility">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="empID" ColumnName="empID" />
+          <ScalarProperty Name="career_service" ColumnName="career_service" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+          <ScalarProperty Name="date_examination" ColumnName="date_examination" />
+          <ScalarProperty Name="place_of_examination" ColumnName="place_of_examination" />
+          <ScalarProperty Name="license_no" ColumnName="license_no" />
+          <ScalarProperty Name="date_release" ColumnName="date_release" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="genders">
+      <EntityTypeMapping TypeName="HRaPSModel.gender">
+        <MappingFragment StoreEntitySet="gender">
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="information">
+      <EntityTypeMapping TypeName="HRaPSModel.information">
+        <MappingFragment StoreEntitySet="information">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="empID" ColumnName="empID" />
+          <ScalarProperty Name="fName" ColumnName="fName" />
+          <ScalarProperty Name="mName" ColumnName="mName" />
+          <ScalarProperty Name="lName" ColumnName="lName" />
+          <ScalarProperty Name="eName" ColumnName="eName" />
+          <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+          <ScalarProperty Name="place_of_birth" ColumnName="place_of_birth" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="civil_status" ColumnName="civil_status" />
+          <ScalarProperty Name="citizenship" ColumnName="citizenship" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="blood_type" ColumnName="blood_type" />
+          <ScalarProperty Name="gsis" ColumnName="gsis" />
+          <ScalarProperty Name="pagibig" ColumnName="pagibig" />
+          <ScalarProperty Name="philhealth" ColumnName="philhealth" />
+          <ScalarProperty Name="sss" ColumnName="sss" />
+          <ScalarProperty Name="res_address" ColumnName="res_address" />
+          <ScalarProperty Name="res_zip_code" ColumnName="res_zip_code" />
+          <ScalarProperty Name="res_tel" ColumnName="res_tel" />
+          <ScalarProperty Name="perma_address" ColumnName="perma_address" />
+          <ScalarProperty Name="perma_zip_code" ColumnName="perma_zip_code" />
+          <ScalarProperty Name="perma_tel" ColumnName="perma_tel" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="cellphone_no" ColumnName="cellphone_no" />
+          <ScalarProperty Name="tin" ColumnName="tin" />
+          <ScalarProperty Name="s_fName" ColumnName="s_fName" />
+          <ScalarProperty Name="s_mName" ColumnName="s_mName" />
+          <ScalarProperty Name="s_lName" ColumnName="s_lName" />
+          <ScalarProperty Name="s_occupation" ColumnName="s_occupation" />
+          <ScalarProperty Name="s_employer_name" ColumnName="s_employer_name" />
+          <ScalarProperty Name="s_bus_address" ColumnName="s_bus_address" />
+          <ScalarProperty Name="s_tel" ColumnName="s_tel" />
+          <ScalarProperty Name="f_fName" ColumnName="f_fName" />
+          <ScalarProperty Name="f_mName" ColumnName="f_mName" />
+          <ScalarProperty Name="f_lName" ColumnName="f_lName" />
+          <ScalarProperty Name="m_fName" ColumnName="m_fName" />
+          <ScalarProperty Name="m_mName" ColumnName="m_mName" />
+          <ScalarProperty Name="m_lName" ColumnName="m_lName" />
+          <ScalarProperty Name="ctc_no" ColumnName="ctc_no" />
+          <ScalarProperty Name="issued_at" ColumnName="issued_at" />
+          <ScalarProperty Name="issued_on" ColumnName="issued_on" />
+          <ScalarProperty Name="date_accomplished" ColumnName="date_accomplished" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="division_id" ColumnName="division_id" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="nConfirm" ColumnName="nConfirm" />
+          <ScalarProperty Name="nDelete" ColumnName="nDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="information_type">
+      <EntityTypeMapping TypeName="HRaPSModel.information_type">
+        <MappingFragment StoreEntitySet="information_type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="other_information">
+      <EntityTypeMapping TypeName="HRaPSModel.other_information">
+        <MappingFragment StoreEntitySet="other_information">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="empID" ColumnName="empID" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="information_type_id" ColumnName="information_type_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="positions">
+      <EntityTypeMapping TypeName="HRaPSModel.position">
+        <MappingFragment StoreEntitySet="position">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="nDelete" ColumnName="nDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="status">
+      <EntityTypeMapping TypeName="HRaPSModel.status">
+        <MappingFragment StoreEntitySet="status">
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="HRaPSModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="trainings">
+      <EntityTypeMapping TypeName="HRaPSModel.training">
+        <MappingFragment StoreEntitySet="training">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="empID" ColumnName="empID" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="dFrom" ColumnName="dFrom" />
+          <ScalarProperty Name="dTo" ColumnName="dTo" />
+          <ScalarProperty Name="number_of_hours" ColumnName="number_of_hours" />
+          <ScalarProperty Name="sponsor" ColumnName="sponsor" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="voluntary_work">
+      <EntityTypeMapping TypeName="HRaPSModel.voluntary_work">
+        <MappingFragment StoreEntitySet="voluntary_work">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="empID" ColumnName="empID" />
+          <ScalarProperty Name="organization" ColumnName="organization" />
+          <ScalarProperty Name="dFrom" ColumnName="dFrom" />
+          <ScalarProperty Name="dTo" ColumnName="dTo" />
+          <ScalarProperty Name="number_of_hours" ColumnName="number_of_hours" />
+          <ScalarProperty Name="nature_of_work" ColumnName="nature_of_work" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="work_experience">
+      <EntityTypeMapping TypeName="HRaPSModel.work_experience">
+        <MappingFragment StoreEntitySet="work_experience">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="empID" ColumnName="empID" />
+          <ScalarProperty Name="dFrom" ColumnName="dFrom" />
+          <ScalarProperty Name="dTo" ColumnName="dTo" />
+          <ScalarProperty Name="positionID" ColumnName="positionID" />
+          <ScalarProperty Name="division_id" ColumnName="division_id" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="hr_view_employee_view_civil_status" FunctionName="HRaPSModel.Store.hr_view_employee_view_civil_status">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRaPSModel.hr_view_employee_view_civil_status_Result">
+          <ScalarProperty Name="civil_status" ColumnName="civil_status" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="hr_view_employee_view_division" FunctionName="HRaPSModel.Store.hr_view_employee_view_division">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRaPSModel.hr_view_employee_view_division_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="hr_view_employee_view_gender" FunctionName="HRaPSModel.Store.hr_view_employee_view_gender">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRaPSModel.hr_view_employee_view_gender_Result">
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="hr_view_employee_view_status" FunctionName="HRaPSModel.Store.hr_view_employee_view_status">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRaPSModel.hr_view_employee_view_status_Result">
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="HRaPSModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="HRaPSModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="HRaPSModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="HRaPSModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRaPSModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="HRaPSModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HRaPSModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="HRaPSModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="HRaPSModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="hr_view_employee_new_information" FunctionName="HRaPSModel.Store.hr_view_employee_new_information" />
+  </EntityContainerMapping>
+</Mapping>

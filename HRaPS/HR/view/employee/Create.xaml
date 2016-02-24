@@ -1,0 +1,410 @@
+﻿<Controls:MetroWindow x:Class="HRaPS.HR.view.employee.frmCreate"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                      xmlns:local="clr-namespace:HRaPS"
+                      
+                      Title="Create Employee"
+                      Height="715" 
+                      Width="739.179"
+                      WindowState="Normal"     
+                      
+                      
+                      BorderThickness="0" 
+                      GlowBrush="Black"
+                      ResizeMode="CanResizeWithGrip"
+                      
+                      WindowTransitionsEnabled="False"
+                      WindowStartupLocation="CenterScreen"
+                      ShowTitleBar="True"
+                                        
+                      ShowIconOnTitleBar="True" Loaded="MetroWindow_Loaded_1"
+                      
+                      >
+
+
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <Button Name="btnSave" Click="btnSave_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Width="20"
+                   Height="20"
+                   Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_save}" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                    <TextBlock Margin="4 0 5 0"
+                   VerticalAlignment="Center"
+                   Text=" Save" />
+                </StackPanel>
+            </Button>
+
+            <Button Name="btnClear">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Width="20"
+                   Height="20"
+                   Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_bug_remove}" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                    <TextBlock Margin="4 0 5 0"
+                   VerticalAlignment="Center"
+                   Text=" Clear" />
+                </StackPanel>
+            </Button>
+
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Name="user_login" Text="Username" Margin="10, 0, 10, 0" ></TextBlock>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
+
+
+
+    <Grid x:Name="personal_info">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="601*"/>
+            <ColumnDefinition Width="131*"/>
+        </Grid.ColumnDefinitions>
+
+
+
+        <ScrollViewer Grid.ColumnSpan="2">
+
+
+            <StackPanel VerticalAlignment="Top" Margin="20,0">
+
+
+
+                <Grid Margin="0, 30, 0, 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="30*"/>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="30*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+
+                    <Grid Grid.Column="0">
+                        <Label  Background="#41b1e1" VerticalAlignment="Center" Content="Employee ID" Height="30" BorderThickness="1,1,1,0" BorderBrush="White" Foreground="White"></Label>
+                    </Grid>
+
+                    <Grid Grid.Column="1">
+                        <TextBox x:Name="empID"                                  
+                                 Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                    </Grid>
+
+                    <Grid Grid.Column="2">
+                        <Label Background="#41b1e1" VerticalAlignment="Center" Content="Department" Height="30" BorderThickness="1,1,1,0" BorderBrush="White" Foreground="White"></Label>
+                    </Grid>
+
+                    <Grid Grid.Column="3">
+                        <ComboBox x:Name="cbo_department" Height="30"/>
+                    </Grid>
+
+
+                    <Grid Grid.Row="1" Grid.Column="2">
+                        <Label Background="#41b1e1" VerticalAlignment="Center" Content="Status" Height="30" BorderThickness="1,1,1,0" BorderBrush="White" Foreground="White"></Label>
+                    </Grid>
+
+                    <Grid Grid.Row="1" Grid.Column="3">
+                        <ComboBox x:Name="cbo_status" Height="30"/>
+                    </Grid>
+
+                    <Grid Grid.Row="3" Grid.ColumnSpan="4" Background="#FFEEEEEE">
+                        <TextBlock TextAlignment="Center" VerticalAlignment="Center">Personal Information</TextBlock>
+                    </Grid>
+
+                </Grid>
+
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+
+                    <Grid Grid.Column="0" Grid.Row="0" Background="#41b1e1">
+                        <Label VerticalAlignment="Center" Content="First name" Height="30" BorderThickness="1,1,1,0" BorderBrush="White" Foreground="White"></Label>
+                    </Grid>
+
+                    <Grid Grid.Column="1" Grid.ColumnSpan="6">
+                        <TextBox x:Name="fName" Text="{Binding fName}" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                    </Grid>
+
+
+                    <Grid Grid.Column="0" Grid.Row="1" Background="#41b1e1">
+                        <Label Foreground="White" VerticalAlignment="Center" Content="Middle name" Height="30" BorderBrush="White" BorderThickness="1,0"></Label>
+                    </Grid>
+
+
+                    <Grid Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="6">
+                        <TextBox x:Name="mName" Text="{Binding mName}" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                    </Grid>
+
+                    <Grid Grid.Column="0" Grid.Row="2" Background="#41b1e1">
+                        <Label Foreground="White" VerticalAlignment="Center" Content="Last name" Height="30" BorderThickness="1,0,1,1" BorderBrush="White"></Label>
+                    </Grid>
+
+                    <Grid Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3">
+                        <TextBox x:Name="lName" Text="{Binding lName}" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                    </Grid>
+
+
+                    <Grid Grid.Column="4" Grid.Row="2" Background="#41b1e1">
+                        <Label Foreground="White" VerticalAlignment="Center" Content="Extension name (e.g Jr.)" Height="30" BorderThickness="1" BorderBrush="White"></Label>
+                    </Grid>
+
+                    <Grid Grid.Column="5" Grid.Row="2" Grid.ColumnSpan="2">
+                        <TextBox x:Name="eName" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                    </Grid>
+
+
+                    <Grid Grid.Column="0" Grid.Row="3" Background="#41b1e1">
+                        <Label Foreground="White" VerticalAlignment="Center" Content="Birthday" Height="30" BorderThickness="1,0,1,1" BorderBrush="White"></Label>
+                    </Grid>
+
+                    <Grid Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2">
+                        <DatePicker IsEnabled="True" SelectedDate="{x:Static sys:DateTime.Now}" VerticalAlignment="Center" FontSize="15" />
+                    </Grid>
+
+                    <Grid Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2">
+                        <DatePicker x:Name="birthday" IsEnabled="True" SelectedDate="{x:Static sys:DateTime.Now}" VerticalAlignment="Center" FontSize="15" />
+                    </Grid>
+
+                    <Grid Grid.Column="3" Grid.Row="3" Background="#41b1e1" Grid.RowSpan="3">
+                        <!--<label Grid.RowSpan="3" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" Content="Residential Address" Height="90"></label>-->
+                        <Label VerticalAlignment="Center" Height="90" BorderThickness="1,1,1,0" BorderBrush="White">
+                            <TextBlock Foreground="White" TextWrapping="WrapWithOverflow" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        Residential Address
+                            </TextBlock>
+                        </Label>
+                    </Grid>
+
+
+                    <Grid Grid.Column="4" Grid.Row="3" Background="#FFDCDADA" Grid.RowSpan="3" Grid.ColumnSpan="3">
+                        <RichTextBox x:Name="res_address" ></RichTextBox>
+                    </Grid>
+
+                    <Grid Grid.Column="0" Grid.Row="4" Background="#41b1e1">
+                        <Label Foreground="White" VerticalAlignment="Center" Content="Place of birth" Height="30" BorderThickness="1,0,1,1" BorderBrush="White"></Label>
+                    </Grid>
+
+                    <Grid Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2">
+                        <TextBox x:Name="place_of_birth" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                    </Grid>
+
+                    <Grid Grid.Column="0" Grid.Row="5" Background="#41b1e1">
+                        <Label Foreground="White" VerticalAlignment="Center" Content="Sex" Height="30" BorderThickness="1,0,1,1" BorderBrush="White"></Label>
+                    </Grid>
+
+                    <Grid Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2">
+                        <ComboBox x:Name="cbo_sex" />
+                    </Grid>
+
+
+                    <Grid Grid.Column="0" Grid.Row="6" Background="#FFDCDADA">
+                        <Label Foreground="White" VerticalAlignment="Center" Content="Civil Status" Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Background="#FF41B1E1"></Label>
+                    </Grid>
+
+                    <Grid Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2">
+                        <ComboBox x:Name="cbo_civil_status" />
+                    </Grid>
+
+                    <Grid Grid.Column="3" Grid.Row="6" Background="#FFDCDADA">
+                        <Label Foreground="White" VerticalAlignment="Center" Content="Zip code" Height="30" BorderThickness="1,0" BorderBrush="White" Background="#FF41B1E1"></Label>
+                    </Grid>
+
+                    <Grid Grid.Column="4" Grid.Row="6" Grid.ColumnSpan="3">
+                        <TextBox x:Name="res_zip_code" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                    </Grid>
+
+                    <Grid Grid.Column="0" Grid.Row="7" Background="#FFDCDADA">
+                        <Label Foreground="White" VerticalAlignment="Center" Content="Citizenship" Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Background="#FF41B1E1"></Label>
+                    </Grid>
+
+                    <Grid Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2">
+                        <TextBox x:Name="citizenship" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                    </Grid>
+
+                    <Grid Grid.Column="3" Grid.Row="7" Background="#FFDCDADA">
+                        <Label Foreground="White" VerticalAlignment="Center" Content="Tel. No" Height="30" BorderThickness="1,0" BorderBrush="White" Background="#FF41B1E1" ></Label>
+                    </Grid>
+
+                    <Grid Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="3">
+                        <TextBox x:Name="res_tel" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                    </Grid>
+
+
+
+                    <Grid Grid.Column="0" Grid.Row="8" Background="#FFDCDADA">
+                        <Label Foreground="White" VerticalAlignment="Center" Content="Height" Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Background="#FF41B1E1"></Label>
+                    </Grid>
+
+                    <Grid Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="2">
+                        <TextBox x:Name="height" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                    </Grid>
+
+
+                    <Grid Grid.Column="3" Grid.Row="8" Background="#FFDCDADA" Grid.RowSpan="3">
+                        <!--<label Grid.RowSpan="3" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" Content="Residential Address" Height="90"></label>-->
+                        <Label VerticalAlignment="Center" Height="90" BorderThickness="1,1,1,0" BorderBrush="White" Background="#FF41B1E1">
+                            <TextBlock Foreground="White" TextWrapping="WrapWithOverflow" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Permanent Address">
+                            </TextBlock>
+                        </Label>
+                    </Grid>
+
+
+                    <Grid Grid.Column="4" Grid.Row="8" Background="#FFDCDADA" Grid.RowSpan="3" Grid.ColumnSpan="3">
+                        <RichTextBox x:Name="perma_address" ></RichTextBox>
+                    </Grid>
+
+
+
+                    <Grid Grid.Column="0" Grid.Row="9" Background="#FFDCDADA">
+                        <Label Foreground="White" VerticalAlignment="Center" Content="Weight" Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Background="#FF41B1E1"></Label>
+                    </Grid>
+
+                    <Grid Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="2">
+                        <TextBox x:Name="weight" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                    </Grid>
+
+
+
+                    <Grid Grid.Column="0" Grid.Row="10" Background="#FFDCDADA">
+                        <Label Foreground="White" VerticalAlignment="Center" Content="Blood Type" Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Background="#FF41B1E1"></Label>
+                    </Grid>
+
+                    <Grid Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="2">
+                        <TextBox x:Name="blood_type" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                    </Grid>
+
+
+
+                    <Grid Grid.Column="0" Grid.Row="11" Background="#FFDCDADA">
+                        <Label Foreground="White" VerticalAlignment="Center" Content="GSIS ID NO." Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Background="#FF41B1E1"></Label>
+                    </Grid>
+
+                    <Grid Grid.Column="1" Grid.Row="11" Grid.ColumnSpan="2">
+                        <TextBox x:Name="gsis" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                    </Grid>
+
+                    <Grid Grid.Column="3" Grid.Row="11" Background="#FFDCDADA">
+                        <Label Foreground="White" VerticalAlignment="Center" Content="Zip code" Height="30" BorderThickness="1,0" BorderBrush="White" Background="#FF41B1E1"></Label>
+                    </Grid>
+
+                    <Grid Grid.Column="4" Grid.Row="11" Grid.ColumnSpan="3">
+                        <TextBox x:Name="perma_zip_code" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                    </Grid>
+
+
+
+                    <Grid Grid.Column="0" Grid.Row="12" Background="#FFDCDADA">
+                        <Label Foreground="White" VerticalAlignment="Center" Content="PHILHEALTH NO." Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Background="#FF41B1E1"></Label>
+                    </Grid>
+
+                    <Grid Grid.Column="1" Grid.Row="12" Grid.ColumnSpan="2">
+                        <TextBox x:Name="philhealth" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                    </Grid>
+
+                    <Grid Grid.Column="3" Grid.Row="12" Background="#FFDCDADA">
+                        <Label Foreground="White" VerticalAlignment="Center" Content="Tel. No" Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Background="#FF41B1E1"></Label>
+                    </Grid>
+
+                    <Grid Grid.Column="4" Grid.Row="12" Grid.ColumnSpan="3">
+                        <TextBox x:Name="perma_tel" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                    </Grid>
+
+
+                    <Grid Grid.Column="0" Grid.Row="13" Background="#FFDCDADA">
+                        <Label Foreground="White" VerticalAlignment="Center" Content="SSS NO." Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Background="#FF41B1E1"></Label>
+                    </Grid>
+
+                    <Grid Grid.Column="1" Grid.Row="13" Grid.ColumnSpan="2">
+                        <TextBox x:Name="sss" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                    </Grid>
+
+
+                    <Grid Grid.Column="3" Grid.Row="13" Background="#FFDCDADA">
+                        <Label Foreground="White" VerticalAlignment="Center" Content="e-Mail" Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Background="#FF41B1E1"></Label>
+                    </Grid>
+
+                    <Grid Grid.Column="4" Grid.Row="13" Grid.ColumnSpan="3">
+                        <TextBox x:Name="email" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                    </Grid>
+
+
+
+                    <Grid Grid.Column="0" Grid.Row="14" Background="#41b1e1">
+                        <Label Foreground="White" VerticalAlignment="Center" Content="TIN NO." Height="30" BorderThickness="1,0,1,1" BorderBrush="White"></Label>
+                    </Grid>
+
+                    <Grid Grid.Column="1" Grid.Row="14" Grid.ColumnSpan="2">
+                        <TextBox x:Name="tin" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                    </Grid>
+
+
+                    <Grid Grid.Column="3" Grid.Row="14" Background="#FFDCDADA">
+                        <Label Foreground="White" VerticalAlignment="Center" Content="cel. no" Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Background="#FF41B1E1"></Label>
+                    </Grid>
+
+                    <Grid Grid.Column="4" Grid.Row="14" Grid.ColumnSpan="3">
+                        <TextBox x:Name="cellphone_no" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                    </Grid>
+
+                    <Grid Grid.Column="0" Grid.Row="15" Background="#FFDCDADA">
+                        <Label Foreground="White" VerticalAlignment="Center" Content="PAGIBIG NO." Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Background="#FF41B1E1"></Label>
+                    </Grid>
+
+                    <Grid Grid.Column="1" Grid.Row="15" Grid.ColumnSpan="2">
+                        <TextBox x:Name="pagibig" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                    </Grid>
+                    
+
+                </Grid>
+
+
+            </StackPanel>
+
+        </ScrollViewer>
+
+    </Grid>
+
+
+
+
+</Controls:MetroWindow>
+

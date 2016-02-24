@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRaPSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="HRaPSModelStoreContainer">
+    <EntitySet Name="children" EntityType="HRaPSModel.Store.children" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="civil_status" EntityType="HRaPSModel.Store.civil_status" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="division" EntityType="HRaPSModel.Store.division" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="education" EntityType="HRaPSModel.Store.education" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="eligibility" EntityType="HRaPSModel.Store.eligibility" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="gender" EntityType="HRaPSModel.Store.gender" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="information" EntityType="HRaPSModel.Store.information" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="information_type" EntityType="HRaPSModel.Store.information_type" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="other_information" EntityType="HRaPSModel.Store.other_information" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="position" EntityType="HRaPSModel.Store.position" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="status" EntityType="HRaPSModel.Store.status" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="HRaPSModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="training" EntityType="HRaPSModel.Store.training" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="voluntary_work" EntityType="HRaPSModel.Store.voluntary_work" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="work_experience" EntityType="HRaPSModel.Store.work_experience" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="children">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="empID" Type="nvarchar" MaxLength="50" />
+    <Property Name="name" Type="nvarchar" MaxLength="150" />
+    <Property Name="birthday" Type="datetime" />
+  </EntityType>
+  <EntityType Name="civil_status">
+    <Key>
+      <PropertyRef Name="civil_status" />
+    </Key>
+    <Property Name="civil_status" Type="int" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="division">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="education">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="empID" Type="nvarchar" MaxLength="50" />
+    <Property Name="nLevel" Type="int" />
+    <Property Name="name_of_school" Type="nvarchar" MaxLength="250" />
+    <Property Name="degree_course" Type="nvarchar" MaxLength="250" />
+    <Property Name="year_graduated" Type="nvarchar" MaxLength="4" />
+    <Property Name="units_earned" Type="nvarchar" MaxLength="50" />
+    <Property Name="dFrom" Type="datetime" />
+    <Property Name="dTo" Type="datetime" />
+    <Property Name="honors_received" Type="nvarchar" MaxLength="150" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="updated_at" Type="datetime" />
+  </EntityType>
+  <EntityType Name="eligibility">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="empID" Type="nvarchar" MaxLength="50" />
+    <Property Name="career_service" Type="nvarchar" MaxLength="250" />
+    <Property Name="rating" Type="nvarchar" MaxLength="10" />
+    <Property Name="date_examination" Type="datetime" />
+    <Property Name="place_of_examination" Type="nvarchar" MaxLength="150" />
+    <Property Name="license_no" Type="nvarchar" MaxLength="30" />
+    <Property Name="date_release" Type="datetime" />
+  </EntityType>
+  <EntityType Name="gender">
+    <Key>
+      <PropertyRef Name="sex" />
+    </Key>
+    <Property Name="sex" Type="int" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="information">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="empID" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="fName" Type="nvarchar" MaxLength="150" />
+    <Property Name="mName" Type="nvarchar" MaxLength="150" />
+    <Property Name="lName" Type="nvarchar" MaxLength="150" />
+    <Property Name="eName" Type="nvarchar" MaxLength="15" />
+    <Property Name="birthdate" Type="datetime" />
+    <Property Name="place_of_birth" Type="nvarchar" MaxLength="250" />
+    <Property Name="sex" Type="int" />
+    <Property Name="civil_status" Type="int" />
+    <Property Name="citizenship" Type="nvarchar" MaxLength="50" />
+    <Property Name="height" Type="nvarchar" MaxLength="20" />
+    <Property Name="weight" Type="nvarchar" MaxLength="20" />
+    <Property Name="blood_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="gsis" Type="nvarchar" MaxLength="50" />
+    <Property Name="pagibig" Type="nvarchar" MaxLength="50" />
+    <Property Name="philhealth" Type="nvarchar" MaxLength="50" />
+    <Property Name="sss" Type="nvarchar" MaxLength="50" />
+    <Property Name="res_address" Type="nvarchar(max)" />
+    <Property Name="res_zip_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="res_tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="perma_address" Type="nvarchar(max)" />
+    <Property Name="perma_zip_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="perma_tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="120" />
+    <Property Name="cellphone_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="tin" Type="nvarchar" MaxLength="50" />
+    <Property Name="s_fName" Type="nvarchar" MaxLength="50" />
+    <Property Name="s_mName" Type="nvarchar" MaxLength="50" />
+    <Property Name="s_lName" Type="nvarchar" MaxLength="50" />
+    <Property Name="s_occupation" Type="nvarchar" MaxLength="250" />
+    <Property Name="s_employer_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="s_bus_address" Type="nvarchar" MaxLength="250" />
+    <Property Name="s_tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="f_fName" Type="nvarchar" MaxLength="50" />
+    <Property Name="f_mName" Type="nvarchar" MaxLength="50" />
+    <Property Name="f_lName" Type="nvarchar" MaxLength="50" />
+    <Property Name="m_fName" Type="nvarchar" MaxLength="50" />
+    <Property Name="m_mName" Type="nvarchar" MaxLength="50" />
+    <Property Name="m_lName" Type="nvarchar(max)" />
+    <Property Name="ctc_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="issued_at" Type="nvarchar" MaxLength="50" />
+    <Property Name="issued_on" Type="nvarchar" MaxLength="50" />
+    <Property Name="date_accomplished" Type="datetime" />
+    <Property Name="status_id" Type="int" />
+    <Property Name="division_id" Type="int" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="updated_date" Type="datetime" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" />
+    <Property Name="nConfirm" Type="int" />
+    <Property Name="nDelete" Type="int" />
+  </EntityType>
+  <EntityType Name="information_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="other_information">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="empID" Type="nvarchar" MaxLength="50" />
+    <Property Name="description" Type="nvarchar" MaxLength="250" />
+    <Property Name="information_type_id" Type="int" />
+  </EntityType>
+  <EntityType Name="position">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" />
+    <Property Name="nDelete" Type="int" />
+  </EntityType>
+  <EntityType Name="status">
+    <Key>
+      <PropertyRef Name="status_id" />
+    </Key>
+    <Property Name="status_id" Type="int" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="training">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="empID" Type="nvarchar" MaxLength="50" />
+    <Property Name="title" Type="nvarchar" MaxLength="350" />
+    <Property Name="dFrom" Type="datetime" />
+    <Property Name="dTo" Type="datetime" />
+    <Property Name="number_of_hours" Type="nvarchar" MaxLength="20" />
+    <Property Name="sponsor" Type="nvarchar" MaxLength="350" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="updated_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="voluntary_work">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="empID" Type="nvarchar" MaxLength="50" />
+    <Property Name="organization" Type="nvarchar" MaxLength="350" />
+    <Property Name="dFrom" Type="datetime" />
+    <Property Name="dTo" Type="datetime" />
+    <Property Name="number_of_hours" Type="nvarchar" MaxLength="10" />
+    <Property Name="nature_of_work" Type="nvarchar" MaxLength="150" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="updated_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="work_experience">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="empID" Type="nvarchar" MaxLength="50" />
+    <Property Name="dFrom" Type="datetime" />
+    <Property Name="dTo" Type="datetime" />
+    <Property Name="positionID" Type="int" />
+    <Property Name="division_id" Type="int" />
+    <Property Name="salary" Type="decimal" Scale="2" />
+    <Property Name="status_id" Type="int" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="updated_date" Type="datetime" />
+  </EntityType>
+  <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="hr_view_employee_new_information" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="empID" Type="nvarchar" Mode="In" />
+    <Parameter Name="division_id" Type="int" Mode="In" />
+    <Parameter Name="status_id" Type="int" Mode="In" />
+    <Parameter Name="fName" Type="nvarchar" Mode="In" />
+    <Parameter Name="mName" Type="nvarchar" Mode="In" />
+    <Parameter Name="lName" Type="nvarchar" Mode="In" />
+    <Parameter Name="eName" Type="nvarchar" Mode="In" />
+    <Parameter Name="birthdate" Type="datetime" Mode="In" />
+    <Parameter Name="place_of_birth" Type="nvarchar" Mode="In" />
+    <Parameter Name="sex" Type="int" Mode="In" />
+    <Parameter Name="civil_status" Type="int" Mode="In" />
+    <Parameter Name="citizenship" Type="nvarchar" Mode="In" />
+    <Parameter Name="height" Type="nvarchar" Mode="In" />
+    <Parameter Name="weight" Type="nvarchar" Mode="In" />
+    <Parameter Name="blood_type" Type="nvarchar" Mode="In" />
+    <Parameter Name="gsis" Type="nvarchar" Mode="In" />
+    <Parameter Name="pagibig" Type="nvarchar" Mode="In" />
+    <Parameter Name="philhealth" Type="nvarchar" Mode="In" />
+    <Parameter Name="sss" Type="nvarchar" Mode="In" />
+    <Parameter Name="res_address" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="res_zip_code" Type="nvarchar" Mode="In" />
+    <Parameter Name="res_tel" Type="nvarchar" Mode="In" />
+    <Parameter Name="perma_address" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="perma_zip_code" Type="nvarchar" Mode="In" />
+    <Parameter Name="perma_tel" Type="nvarchar" Mode="In" />
+    <Parameter Name="email" Type="nvarchar" Mode="In" />
+    <Parameter Name="cellphone_no" Type="nvarchar" Mode="In" />
+    <Parameter Name="tin" Type="nvarchar" Mode="In" />
+    <Parameter Name="username" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="hr_view_employee_view_civil_status" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="hr_view_employee_view_division" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="hr_view_employee_view_gender" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="hr_view_employee_view_status" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+</Schema>

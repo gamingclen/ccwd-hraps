@@ -1,0 +1,175 @@
+﻿
+<Controls:MetroWindow x:Class="HRaPS.HR.view.main"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      Title="HR" 
+                      Height="600" 
+                      Width="1405"
+                      WindowState="Maximized"     
+                                            
+                      BorderThickness="0" 
+                      GlowBrush="Black"
+                      ResizeMode="CanResizeWithGrip"
+                      
+                      WindowTransitionsEnabled="False"
+                      WindowStartupLocation="CenterScreen" MouseDown="MetroWindow_MouseDown_1" ShowCloseButton="False" ShowMaxRestoreButton="False" >
+
+
+
+
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <Button Name="btnMenu">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Width="20"
+                   Height="20"
+                   Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_user}" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                    <TextBlock Margin="4 0 5 0" Name="user_login"
+                   VerticalAlignment="Center"
+                   Text=" Username" ToolTip="Username"/>
+                </StackPanel>
+            </Button>
+
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
+    
+
+    <Grid x:Name="grid_main">
+        <Grid>
+           
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">                
+                <Image Source="/HRaPS;component/Pictures/hr-icon.png" Height="250" />
+            </StackPanel>
+            
+            
+            
+        </Grid>
+
+        <Controls:Flyout  Position="Bottom" Height="200" Theme="Inverse"  x:Name="foSide" >
+            <Grid >
+                <Grid Name="gridMenu" Visibility="Visible">
+
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden">
+
+                        <StackPanel Orientation="Horizontal">
+
+                            <Button 
+                            
+                        x:Name="btnCreate"  
+                        Style="{StaticResource SquareButtonStyle}"
+            
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center" Width="140" Height="200" ToolTip="Create Employee" BorderThickness="1" BorderBrush="{x:Null}" Cursor="Hand" Click="btnCreate_Click" >
+                                <StackPanel>
+                                    <Image Source="/HRaPS;component/Pictures/create.png"  />
+                                    <TextBlock Text="Create" VerticalAlignment="Center" TextAlignment="Center" Foreground="White"></TextBlock>
+                                </StackPanel>
+                            </Button>
+
+
+                            <Button 
+                            
+                        x:Name="btnView"  
+                        Style="{StaticResource SquareButtonStyle}"
+            
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center" Width="140" Height="200" ToolTip="View Employee" BorderThickness="1" BorderBrush="{x:Null}" Cursor="Hand" Click="btnView_Click" >
+                                <StackPanel>
+                                    <Image Source="/HRaPS;component/Pictures/View.png"  />
+                                    <TextBlock Text="View" VerticalAlignment="Center" TextAlignment="Center" Foreground="White"></TextBlock>
+                                </StackPanel>
+                            </Button>
+
+
+                            <Button 
+                            
+                        x:Name="btnDTR"  
+                        Style="{StaticResource SquareButtonStyle}"
+            
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center" Width="140" Height="200" ToolTip="DTR" BorderThickness="1" BorderBrush="{x:Null}" Cursor="Hand" Click="btnView_Click" >
+                                <StackPanel>
+                                    <Image Source="/HRaPS;component/Pictures/dtr.png"  />
+                                    <TextBlock Text="DTR" VerticalAlignment="Center" TextAlignment="Center" Foreground="White"></TextBlock>
+                                </StackPanel>
+                            </Button>
+
+
+                            <Button 
+                            
+                        x:Name="btnCreateAttendance"  
+                        Style="{StaticResource SquareButtonStyle}"
+            
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center" Width="140" Height="200" ToolTip="Create Attendance" BorderThickness="1" BorderBrush="{x:Null}" Cursor="Hand" Click="btnView_Click" >
+                                <StackPanel>
+                                    <Image Source="/HRaPS;component/Pictures/attendance.png"  />
+                                    <TextBlock Text="Attendance" VerticalAlignment="Center" TextAlignment="Center" Foreground="White"></TextBlock>
+                                </StackPanel>
+                            </Button>
+
+
+                            <Button 
+                            
+                        x:Name="btnSchedule"  
+                        Style="{StaticResource SquareButtonStyle}"
+            
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center" Width="140" Height="200" ToolTip="Create Schedule" BorderThickness="1" BorderBrush="{x:Null}" Cursor="Hand" Click="btnView_Click" >
+                                <StackPanel>
+                                    <Image Source="/HRaPS;component/Pictures/schedule.png"  />
+                                    <TextBlock Text="Schedule" VerticalAlignment="Center" TextAlignment="Center" Foreground="White"></TextBlock>
+                                </StackPanel>
+                            </Button>
+
+
+                            <Button 
+                            
+                                x:Name="btnLeave"  
+                                Style="{StaticResource SquareButtonStyle}"
+            
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center" Width="140" Height="200" ToolTip="Create Leave" BorderThickness="1" BorderBrush="{x:Null}" Cursor="Hand" Click="btnView_Click" >
+                                        <StackPanel>
+                                            <Image Source="/HRaPS;component/Pictures/leave.png"  />
+                                            <TextBlock Text="Leave" VerticalAlignment="Center" TextAlignment="Center" Foreground="White"></TextBlock>
+                                        </StackPanel>
+                            </Button>
+
+
+                            <Button 
+                            
+                        x:Name="btnClose"  
+                        Style="{StaticResource SquareButtonStyle}"
+            
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center" Width="140" Height="200" ToolTip="Close" BorderThickness="1" BorderBrush="{x:Null}" Cursor="Hand" Click="btnClose_Click" >
+                                <StackPanel>
+                                    <Image Source="/HRaPS;component/Pictures/close.png"  />
+                                    <TextBlock Text="Close" VerticalAlignment="Center" TextAlignment="Center" Foreground="White"></TextBlock>
+                                </StackPanel>
+                            </Button>
+
+                        </StackPanel>
+                        
+                    </ScrollViewer>
+                </Grid>
+
+                
+            </Grid>
+
+        </Controls:Flyout>
+        
+    </Grid>
+
+
+
+
+
+</Controls:MetroWindow>
+

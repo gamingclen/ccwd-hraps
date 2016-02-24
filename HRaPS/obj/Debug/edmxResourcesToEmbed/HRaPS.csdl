@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRaPSModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="HRaPSEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="children" EntityType="HRaPSModel.child" />
+    <EntitySet Name="civil_status" EntityType="HRaPSModel.civil_status" />
+    <EntitySet Name="divisions" EntityType="HRaPSModel.division" />
+    <EntitySet Name="educations" EntityType="HRaPSModel.education" />
+    <EntitySet Name="eligibilities" EntityType="HRaPSModel.eligibility" />
+    <EntitySet Name="genders" EntityType="HRaPSModel.gender" />
+    <EntitySet Name="information" EntityType="HRaPSModel.information" />
+    <EntitySet Name="information_type" EntityType="HRaPSModel.information_type" />
+    <EntitySet Name="other_information" EntityType="HRaPSModel.other_information" />
+    <EntitySet Name="positions" EntityType="HRaPSModel.position" />
+    <EntitySet Name="status" EntityType="HRaPSModel.status" />
+    <EntitySet Name="sysdiagrams" EntityType="HRaPSModel.sysdiagram" />
+    <EntitySet Name="trainings" EntityType="HRaPSModel.training" />
+    <EntitySet Name="voluntary_work" EntityType="HRaPSModel.voluntary_work" />
+    <EntitySet Name="work_experience" EntityType="HRaPSModel.work_experience" />
+    <FunctionImport Name="hr_view_employee_view_civil_status" ReturnType="Collection(HRaPSModel.hr_view_employee_view_civil_status_Result)" />
+    <FunctionImport Name="hr_view_employee_view_division" ReturnType="Collection(HRaPSModel.hr_view_employee_view_division_Result)" />
+    <FunctionImport Name="hr_view_employee_view_gender" ReturnType="Collection(HRaPSModel.hr_view_employee_view_gender_Result)" />
+    <FunctionImport Name="hr_view_employee_view_status" ReturnType="Collection(HRaPSModel.hr_view_employee_view_status_Result)" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(HRaPSModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(HRaPSModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="hr_view_employee_new_information">
+      <Parameter Name="empID" Mode="In" Type="String" />
+      <Parameter Name="division_id" Mode="In" Type="Int32" />
+      <Parameter Name="status_id" Mode="In" Type="Int32" />
+      <Parameter Name="fName" Mode="In" Type="String" />
+      <Parameter Name="mName" Mode="In" Type="String" />
+      <Parameter Name="lName" Mode="In" Type="String" />
+      <Parameter Name="eName" Mode="In" Type="String" />
+      <Parameter Name="birthdate" Mode="In" Type="DateTime" />
+      <Parameter Name="place_of_birth" Mode="In" Type="String" />
+      <Parameter Name="sex" Mode="In" Type="Int32" />
+      <Parameter Name="civil_status" Mode="In" Type="Int32" />
+      <Parameter Name="citizenship" Mode="In" Type="String" />
+      <Parameter Name="height" Mode="In" Type="String" />
+      <Parameter Name="weight" Mode="In" Type="String" />
+      <Parameter Name="blood_type" Mode="In" Type="String" />
+      <Parameter Name="gsis" Mode="In" Type="String" />
+      <Parameter Name="pagibig" Mode="In" Type="String" />
+      <Parameter Name="philhealth" Mode="In" Type="String" />
+      <Parameter Name="sss" Mode="In" Type="String" />
+      <Parameter Name="res_address" Mode="In" Type="String" />
+      <Parameter Name="res_zip_code" Mode="In" Type="String" />
+      <Parameter Name="res_tel" Mode="In" Type="String" />
+      <Parameter Name="perma_address" Mode="In" Type="String" />
+      <Parameter Name="perma_zip_code" Mode="In" Type="String" />
+      <Parameter Name="perma_tel" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="cellphone_no" Mode="In" Type="String" />
+      <Parameter Name="tin" Mode="In" Type="String" />
+      <Parameter Name="username" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="child">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="empID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="name" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="birthday" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="civil_status">
+    <Key>
+      <PropertyRef Name="civil_status1" />
+    </Key>
+    <Property Name="civil_status1" Type="Int32" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="division">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="education">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="empID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="nLevel" Type="Int32" />
+    <Property Name="name_of_school" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="degree_course" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="year_graduated" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+    <Property Name="units_earned" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="dFrom" Type="DateTime" Precision="3" />
+    <Property Name="dTo" Type="DateTime" Precision="3" />
+    <Property Name="honors_received" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="eligibility">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="empID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="career_service" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="rating" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="date_examination" Type="DateTime" Precision="3" />
+    <Property Name="place_of_examination" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="license_no" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="date_release" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="gender">
+    <Key>
+      <PropertyRef Name="sex" />
+    </Key>
+    <Property Name="sex" Type="Int32" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="information">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="empID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="fName" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="mName" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="lName" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="eName" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="birthdate" Type="DateTime" Precision="3" />
+    <Property Name="place_of_birth" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="sex" Type="Int32" />
+    <Property Name="civil_status" Type="Int32" />
+    <Property Name="citizenship" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="height" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="weight" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="blood_type" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="gsis" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="pagibig" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="philhealth" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="sss" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="res_address" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="res_zip_code" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="res_tel" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="perma_address" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="perma_zip_code" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="perma_tel" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="email" Type="String" MaxLength="120" Unicode="true" FixedLength="false" />
+    <Property Name="cellphone_no" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="tin" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="s_fName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="s_mName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="s_lName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="s_occupation" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="s_employer_name" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="s_bus_address" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="s_tel" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="f_fName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="f_mName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="f_lName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="m_fName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="m_mName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="m_lName" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ctc_no" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="issued_at" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="issued_on" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="date_accomplished" Type="DateTime" Precision="3" />
+    <Property Name="status_id" Type="Int32" />
+    <Property Name="division_id" Type="Int32" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="updated_date" Type="DateTime" Precision="3" />
+    <Property Name="username" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="nConfirm" Type="Int32" />
+    <Property Name="nDelete" Type="Int32" />
+  </EntityType>
+  <EntityType Name="information_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="other_information">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="empID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="description" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="information_type_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="position">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="nDelete" Type="Int32" />
+  </EntityType>
+  <EntityType Name="status">
+    <Key>
+      <PropertyRef Name="status_id" />
+    </Key>
+    <Property Name="status_id" Type="Int32" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="training">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="empID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="title" Type="String" MaxLength="350" Unicode="true" FixedLength="false" />
+    <Property Name="dFrom" Type="DateTime" Precision="3" />
+    <Property Name="dTo" Type="DateTime" Precision="3" />
+    <Property Name="number_of_hours" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="sponsor" Type="String" MaxLength="350" Unicode="true" FixedLength="false" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="updated_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="voluntary_work">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="empID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="organization" Type="String" MaxLength="350" Unicode="true" FixedLength="false" />
+    <Property Name="dFrom" Type="DateTime" Precision="3" />
+    <Property Name="dTo" Type="DateTime" Precision="3" />
+    <Property Name="number_of_hours" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="nature_of_work" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="updated_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="work_experience">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="empID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="dFrom" Type="DateTime" Precision="3" />
+    <Property Name="dTo" Type="DateTime" Precision="3" />
+    <Property Name="positionID" Type="Int32" />
+    <Property Name="division_id" Type="Int32" />
+    <Property Name="salary" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="status_id" Type="Int32" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="updated_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <ComplexType Name="hr_view_employee_view_civil_status_Result">
+    <Property Type="Int32" Name="civil_status" Nullable="false" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="hr_view_employee_view_division_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="hr_view_employee_view_gender_Result">
+    <Property Type="Int32" Name="sex" Nullable="false" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="hr_view_employee_view_status_Result">
+    <Property Type="Int32" Name="status_id" Nullable="false" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

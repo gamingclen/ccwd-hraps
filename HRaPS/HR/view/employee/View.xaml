@@ -1,0 +1,1019 @@
+﻿
+<Controls:MetroWindow x:Class="HRaPS.HR.view.employee.View"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                      Title="Update Employee" 
+                      Height="715" 
+                      Width="887.679"
+                      WindowState="Maximized"     
+                      
+                      
+                      BorderThickness="0" 
+                      GlowBrush="Black"
+                      ResizeMode="CanResizeWithGrip"
+                      
+                      WindowTransitionsEnabled="False"
+                      WindowStartupLocation="CenterScreen" >
+
+
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <Button Name="btnSave">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Width="20"
+                   Height="20"
+                   Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_save}" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                    <TextBlock Margin="4 0 5 0"
+                   VerticalAlignment="Center"
+                   Text=" Save" />
+                </StackPanel>
+            </Button>
+
+            <Button Name="btnNew" Click="btnNew_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Width="20"
+                   Height="20"
+                   Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_page_new}" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                    <TextBlock Margin="4 0 5 0"
+                   VerticalAlignment="Center"
+                   Text=" New" Name="txtNew"/>
+                </StackPanel>
+            </Button>
+
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Name="user_login" Text="Username" Margin="10, 0, 10, 0" ></TextBlock>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
+    
+    
+
+
+    <Grid x:Name="grid_main">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="47*"/>
+            <ColumnDefinition Width="8*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <TabControl Name="tabEmployee" Controls:TabControlHelper.IsUnderlined="True" Grid.ColumnSpan="2" >
+            <TabItem Name="tabInformation" Header="Information"
+                                 Controls:ControlsHelper.HeaderFontSize="12" GotFocus="tabInformation_GotFocus" >
+
+
+
+
+
+                <ScrollViewer>
+
+
+                    <StackPanel VerticalAlignment="Top" Margin="20,0">
+
+
+
+                        <Grid Margin="0, 30, 0, 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20*"/>
+                                <ColumnDefinition Width="30*"/>
+                                <ColumnDefinition Width="20*"/>
+                                <ColumnDefinition Width="30*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                            </Grid.RowDefinitions>
+
+
+                            <Grid Grid.Column="0">
+                                <Label  Background="#41b1e1" VerticalAlignment="Center" Content="Employee ID" Height="30" BorderThickness="1,1,1,0" BorderBrush="White" Foreground="White"></Label>
+                            </Grid>
+
+                            <Grid Grid.Column="1">
+                                <TextBox x:Name="empID" IsEnabled="False" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                            </Grid>
+
+                            <Grid Grid.Column="2">
+                                <Label Background="#41b1e1" VerticalAlignment="Center" Content="Department" Height="30" BorderThickness="1,1,1,0" BorderBrush="White" Foreground="White"></Label>
+                            </Grid>
+
+                            <Grid Grid.Column="3">
+                                <ComboBox x:Name="cbo_department" Height="30"/>
+                            </Grid>
+
+                            <Grid Grid.Row="1" Grid.Column="2">
+                                <Label Background="#41b1e1" VerticalAlignment="Center" Content="Status" Height="30" BorderThickness="1,1,1,0" BorderBrush="White" Foreground="White"></Label>
+                            </Grid>
+
+                            <Grid Grid.Row="1" Grid.Column="3">
+                                <ComboBox x:Name="cbo_status" Height="30"/>
+                            </Grid>
+                            
+                            <Grid Grid.Row="3" Grid.ColumnSpan="4" Background="#FFEEEEEE">
+                                <TextBlock TextAlignment="Center" VerticalAlignment="Center">Personal Information</TextBlock>
+                            </Grid>
+
+                        </Grid>
+
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20*"/>
+                                <ColumnDefinition Width="15*"/>
+                                <ColumnDefinition Width="15*"/>
+                                <ColumnDefinition Width="10*"/>
+                                <ColumnDefinition Width="20*"/>
+                                <ColumnDefinition Width="10*"/>
+                                <ColumnDefinition Width="10*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                            </Grid.RowDefinitions>
+
+
+                            <Grid Grid.Column="0" Grid.Row="0" Background="#41b1e1">
+                                <Label VerticalAlignment="Center" Content="First name" Height="30" BorderThickness="1,1,1,0" BorderBrush="White" Foreground="White"></Label>
+                            </Grid>
+
+                            <Grid Grid.Column="1" Grid.ColumnSpan="6">
+                                <TextBox x:Name="fName" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                            </Grid>
+
+
+                            <Grid Grid.Column="0" Grid.Row="1" Background="#41b1e1">
+                                <Label Foreground="White" VerticalAlignment="Center" Content="Middle name" Height="30" BorderBrush="White" BorderThickness="1,0"></Label>
+                            </Grid>
+
+
+                            <Grid Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="6">
+                                <TextBox x:Name="mName" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                            </Grid>
+
+                            <Grid Grid.Column="0" Grid.Row="2" Background="#41b1e1">
+                                <Label Foreground="White" VerticalAlignment="Center" Content="Last name" Height="30" BorderThickness="1,0,1,1" BorderBrush="White"></Label>
+                            </Grid>
+
+                            <Grid Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3">
+                                <TextBox x:Name="lName" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                            </Grid>
+
+
+                            <Grid Grid.Column="4" Grid.Row="2" Background="#41b1e1">
+                                <Label Foreground="White" VerticalAlignment="Center" Content="Extension name (e.g Jr.)" Height="30" BorderThickness="1" BorderBrush="White"></Label>
+                            </Grid>
+
+                            <Grid Grid.Column="5" Grid.Row="2" Grid.ColumnSpan="2">
+                                <TextBox x:Name="eName" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                            </Grid>
+
+
+                            <Grid Grid.Column="0" Grid.Row="3" Background="#41b1e1">
+                                <Label Foreground="White" VerticalAlignment="Center" Content="Birthday" Height="30" BorderThickness="1,0,1,1" BorderBrush="White"></Label>
+                            </Grid>
+
+                            <Grid Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2">
+                                <DatePicker IsEnabled="True" SelectedDate="{x:Static sys:DateTime.Now}" VerticalAlignment="Center" FontSize="15" />
+                            </Grid>
+
+                            <Grid Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2">
+                                <DatePicker x:Name="birthday" IsEnabled="True" SelectedDate="{x:Static sys:DateTime.Now}" VerticalAlignment="Center" FontSize="15" />
+                            </Grid>
+
+                            <Grid Grid.Column="3" Grid.Row="3" Background="#41b1e1" Grid.RowSpan="3">
+                                <!--<label Grid.RowSpan="3" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" Content="Residential Address" Height="90"></label>-->
+                                <Label VerticalAlignment="Center" Height="90" BorderThickness="1,1,1,0" BorderBrush="White">
+                                    <TextBlock Foreground="White" TextWrapping="WrapWithOverflow" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        Residential Address
+                                    </TextBlock>
+                                </Label>
+                            </Grid>
+
+
+                            <Grid Grid.Column="4" Grid.Row="3" Background="#FFDCDADA" Grid.RowSpan="3" Grid.ColumnSpan="3">
+                                <RichTextBox x:Name="res_address" ></RichTextBox>
+                            </Grid>
+
+                            <Grid Grid.Column="0" Grid.Row="4" Background="#41b1e1">
+                                <Label Foreground="White" VerticalAlignment="Center" Content="Place of birth" Height="30" BorderThickness="1,0,1,1" BorderBrush="White"></Label>
+                            </Grid>
+
+                            <Grid Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2">
+                                <TextBox x:Name="place_of_birth" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                            </Grid>
+
+                            <Grid Grid.Column="0" Grid.Row="5" Background="#41b1e1">
+                                <Label Foreground="White" VerticalAlignment="Center" Content="Sex" Height="30" BorderThickness="1,0,1,1" BorderBrush="White"></Label>
+                            </Grid>
+
+                            <Grid Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2">
+                                <ComboBox x:Name="cbo_sex" />
+                            </Grid>
+
+
+                            <Grid Grid.Column="0" Grid.Row="6" Background="#FFDCDADA">
+                                <Label Foreground="White" VerticalAlignment="Center" Content="Civil Status" Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Background="#FF41B1E1"></Label>
+                            </Grid>
+
+                            <Grid Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2">
+                                <ComboBox x:Name="cbo_civil_status" />
+                            </Grid>
+
+                            <Grid Grid.Column="3" Grid.Row="6" Background="#FFDCDADA">
+                                <Label Foreground="White" VerticalAlignment="Center" Content="Zip code" Height="30" BorderThickness="1,0" BorderBrush="White" Background="#FF41B1E1"></Label>
+                            </Grid>
+
+                            <Grid Grid.Column="4" Grid.Row="6" Grid.ColumnSpan="3">
+                                <TextBox x:Name="res_zip_code" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                            </Grid>
+
+                            <Grid Grid.Column="0" Grid.Row="7" Background="#FFDCDADA">
+                                <Label Foreground="White" VerticalAlignment="Center" Content="Citizenship" Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Background="#FF41B1E1"></Label>
+                            </Grid>
+
+                            <Grid Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2">
+                                <TextBox x:Name="citizenship" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                            </Grid>
+
+                            <Grid Grid.Column="3" Grid.Row="7" Background="#FFDCDADA">
+                                <Label Foreground="White" VerticalAlignment="Center" Content="Tel. No" Height="30" BorderThickness="1,0" BorderBrush="White" Background="#FF41B1E1" ></Label>
+                            </Grid>
+
+                            <Grid Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="3">
+                                <TextBox x:Name="res_tel" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                            </Grid>
+
+
+
+                            <Grid Grid.Column="0" Grid.Row="8" Background="#FFDCDADA">
+                                <Label Foreground="White" VerticalAlignment="Center" Content="Height" Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Background="#FF41B1E1"></Label>
+                            </Grid>
+
+                            <Grid Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="2">
+                                <TextBox x:Name="height" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                            </Grid>
+
+
+                            <Grid Grid.Column="3" Grid.Row="8" Background="#FFDCDADA" Grid.RowSpan="3">
+                                <!--<label Grid.RowSpan="3" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" Content="Residential Address" Height="90"></label>-->
+                                <Label VerticalAlignment="Center" Height="90" BorderThickness="1,1,1,0" BorderBrush="White" Background="#FF41B1E1">
+                                    <TextBlock Foreground="White" TextWrapping="WrapWithOverflow" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Permanent Address">
+                                    </TextBlock>
+                                </Label>
+                            </Grid>
+
+
+                            <Grid Grid.Column="4" Grid.Row="8" Background="#FFDCDADA" Grid.RowSpan="3" Grid.ColumnSpan="3">
+                                <RichTextBox x:Name="perma_address" ></RichTextBox>
+                            </Grid>
+
+
+
+                            <Grid Grid.Column="0" Grid.Row="9" Background="#FFDCDADA">
+                                <Label Foreground="White" VerticalAlignment="Center" Content="Weight" Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Background="#FF41B1E1"></Label>
+                            </Grid>
+
+                            <Grid Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="2">
+                                <TextBox x:Name="weight" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                            </Grid>
+
+
+
+                            <Grid Grid.Column="0" Grid.Row="10" Background="#FFDCDADA">
+                                <Label Foreground="White" VerticalAlignment="Center" Content="Blood Type" Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Background="#FF41B1E1"></Label>
+                            </Grid>
+
+                            <Grid Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="2">
+                                <TextBox x:Name="blood_type" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                            </Grid>
+
+
+
+                            <Grid Grid.Column="0" Grid.Row="11" Background="#FFDCDADA">
+                                <Label Foreground="White" VerticalAlignment="Center" Content="GSIS ID NO." Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Background="#FF41B1E1"></Label>
+                            </Grid>
+
+                            <Grid Grid.Column="1" Grid.Row="11" Grid.ColumnSpan="2">
+                                <TextBox x:Name="gsis" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                            </Grid>
+
+                            <Grid Grid.Column="3" Grid.Row="11" Background="#FFDCDADA">
+                                <Label Foreground="White" VerticalAlignment="Center" Content="Zip code" Height="30" BorderThickness="1,0" BorderBrush="White" Background="#FF41B1E1"></Label>
+                            </Grid>
+
+                            <Grid Grid.Column="4" Grid.Row="11" Grid.ColumnSpan="3">
+                                <TextBox x:Name="perma_zip_code" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                            </Grid>
+
+
+
+                            <Grid Grid.Column="0" Grid.Row="12" Background="#FFDCDADA">
+                                <Label Foreground="White" VerticalAlignment="Center" Content="PHILHEALTH NO." Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Background="#FF41B1E1"></Label>
+                            </Grid>
+
+                            <Grid Grid.Column="1" Grid.Row="12" Grid.ColumnSpan="2">
+                                <TextBox x:Name="philhealth" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                            </Grid>
+
+                            <Grid Grid.Column="3" Grid.Row="12" Background="#FFDCDADA">
+                                <Label Foreground="White" VerticalAlignment="Center" Content="Tel. No" Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Background="#FF41B1E1"></Label>
+                            </Grid>
+
+                            <Grid Grid.Column="4" Grid.Row="12" Grid.ColumnSpan="3">
+                                <TextBox x:Name="perma_tel" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                            </Grid>
+
+
+                            <Grid Grid.Column="0" Grid.Row="13" Background="#FFDCDADA">
+                                <Label Foreground="White" VerticalAlignment="Center" Content="SSS NO." Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Background="#FF41B1E1"></Label>
+                            </Grid>
+
+                            <Grid Grid.Column="1" Grid.Row="13" Grid.ColumnSpan="2">
+                                <TextBox x:Name="sss" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                            </Grid>
+
+
+                            <Grid Grid.Column="3" Grid.Row="13" Background="#FFDCDADA">
+                                <Label Foreground="White" VerticalAlignment="Center" Content="e-Mail" Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Background="#FF41B1E1"></Label>
+                            </Grid>
+
+                            <Grid Grid.Column="4" Grid.Row="13" Grid.ColumnSpan="3">
+                                <TextBox x:Name="email" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                            </Grid>
+
+
+
+                            <Grid Grid.Column="0" Grid.Row="14" Background="#41b1e1">
+                                <Label Foreground="White" VerticalAlignment="Center" Content="TIN NO." Height="30" BorderThickness="1,0,1,1" BorderBrush="White"></Label>
+                            </Grid>
+
+                            <Grid Grid.Column="1" Grid.Row="14" Grid.ColumnSpan="2">
+                                <TextBox x:Name="tin" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                            </Grid>
+
+
+                            <Grid Grid.Column="3" Grid.Row="14" Background="#FFDCDADA">
+                                <Label Foreground="White" VerticalAlignment="Center" Content="cel. no" Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Background="#FF41B1E1"></Label>
+                            </Grid>
+
+                            <Grid Grid.Column="4" Grid.Row="14" Grid.ColumnSpan="3">
+                                <TextBox x:Name="cellphone_no" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                            </Grid>
+
+                            <Grid Grid.Column="0" Grid.Row="15" Background="#FFDCDADA">
+                                <Label Foreground="White" VerticalAlignment="Center" Content="PAGIBIG NO." Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Background="#FF41B1E1"></Label>
+                            </Grid>
+
+                            <Grid Grid.Column="1" Grid.Row="15" Grid.ColumnSpan="2">
+                                <TextBox x:Name="pagibig" Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                            </Grid>
+                            
+                        </Grid>
+
+
+                    </StackPanel>
+
+                </ScrollViewer>
+                
+
+
+            </TabItem>
+            <TabItem Name="tabFamily" Header="Family Background"
+                                 Controls:ControlsHelper.HeaderFontSize="12" GotFocus="tabFamily_GotFocus" >
+            
+            
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*"></ColumnDefinition>
+                        <ColumnDefinition Width="50*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="100*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+
+                    <Grid Grid.Column="0" Grid.ColumnSpan="2" Background="#FFEEEEEE" >
+                        <TextBlock Text="Family Background" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    </Grid>
+                    
+                    
+                    <Grid Grid.Column="0" Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30*"/>
+                            <ColumnDefinition Width="70*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+
+                        <Grid Grid.ColumnSpan="2" Grid.Row="0" Background="#41b1e1">
+                            <TextBlock TextAlignment="Center" Text="SPOUSE" VerticalAlignment="Center" Foreground="White"></TextBlock>
+                        </Grid>
+                        
+                        <Grid Grid.Column="0" Grid.Row="1" Background="#41b1e1">
+                            <Label VerticalAlignment="Center" Content="Surname" Height="30" BorderThickness="1,1,1,0" BorderBrush="White" Foreground="White"></Label>
+                        </Grid>
+
+                        <Grid Grid.Column="1" Grid.Row="1">
+                            <TextBox Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                        </Grid>
+
+                        <Grid Grid.Column="0" Grid.Row="2" Background="#41b1e1">
+                            <Label VerticalAlignment="Center" Content="First Name" Height="30" BorderThickness="1,0" BorderBrush="White" Foreground="White"></Label>
+                        </Grid>
+
+                        <Grid Grid.Column="1" Grid.Row="2">
+                            <TextBox Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                        </Grid>
+
+
+                        <Grid Grid.Column="0" Grid.Row="3" Background="#41b1e1">
+                            <Label VerticalAlignment="Center" Content="Middle Name" Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Foreground="White"></Label>
+                        </Grid>
+
+                        <Grid Grid.Column="1" Grid.Row="3">
+                            <TextBox Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                        </Grid>
+
+
+                        <Grid Grid.Column="0" Grid.Row="4" Background="#41b1e1">
+                            <Label VerticalAlignment="Center" Content="Occupation" Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Foreground="White"></Label>
+                        </Grid>
+
+                        <Grid Grid.Column="1" Grid.Row="4">
+                            <TextBox Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                        </Grid>
+
+                        <Grid Grid.Column="0" Grid.Row="5" Background="#41b1e1">
+                            <Label VerticalAlignment="Center" Content="Business Name" Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Foreground="White"></Label>
+                        </Grid>
+
+                        <Grid Grid.Column="1" Grid.Row="5">
+                            <TextBox Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                        </Grid>
+
+
+                        <Grid Grid.Column="0" Grid.Row="6" Background="#41b1e1">
+                            <Label VerticalAlignment="Center" Content="Business Address" Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Foreground="White"></Label>
+                        </Grid>
+
+                        <Grid Grid.Column="1" Grid.Row="6">
+                            <TextBox Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                        </Grid>
+
+                        <Grid Grid.Column="0" Grid.Row="7" Background="#41b1e1">
+                            <Label VerticalAlignment="Center" Content="Tel. No." Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Foreground="White"></Label>
+                        </Grid>
+
+                        <Grid Grid.Column="1" Grid.Row="7">
+                            <TextBox Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                        </Grid>
+
+                        <Grid Grid.ColumnSpan="2" Grid.Row="8" Background="#41b1e1">
+                            <TextBlock TextAlignment="Center" Text="FATHER" VerticalAlignment="Center" Foreground="White"></TextBlock>
+                        </Grid>
+
+
+                        <Grid Grid.Column="0" Grid.Row="9" Background="#41b1e1">
+                            <Label VerticalAlignment="Center" Content="Surname" Height="30" BorderThickness="1,1,1,0" BorderBrush="White" Foreground="White"></Label>
+                        </Grid>
+
+                        <Grid Grid.Column="1" Grid.Row="9">
+                            <TextBox Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                        </Grid>
+
+                        <Grid Grid.Column="0" Grid.Row="10" Background="#41b1e1">
+                            <Label VerticalAlignment="Center" Content="First Name" Height="30" BorderThickness="1,0" BorderBrush="White" Foreground="White"></Label>
+                        </Grid>
+
+                        <Grid Grid.Column="1" Grid.Row="10">
+                            <TextBox Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                        </Grid>
+
+
+                        <Grid Grid.Column="0" Grid.Row="11" Background="#41b1e1">
+                            <Label VerticalAlignment="Center" Content="Middle Name" Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Foreground="White"></Label>
+                        </Grid>
+
+                        <Grid Grid.Column="1" Grid.Row="11">
+                            <TextBox Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                        </Grid>
+
+
+
+                        <Grid Grid.ColumnSpan="2" Grid.Row="12" Background="#41b1e1">
+                            <TextBlock TextAlignment="Center" Text="MOUSE" VerticalAlignment="Center" Foreground="White"></TextBlock>
+                        </Grid>
+
+
+                        <Grid Grid.Column="0" Grid.Row="13" Background="#41b1e1">
+                            <Label VerticalAlignment="Center" Content="Surname" Height="30" BorderThickness="1,1,1,0" BorderBrush="White" Foreground="White"></Label>
+                        </Grid>
+
+                        <Grid Grid.Column="1" Grid.Row="13">
+                            <TextBox Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                        </Grid>
+
+                        <Grid Grid.Column="0" Grid.Row="14" Background="#41b1e1">
+                            <Label VerticalAlignment="Center" Content="First Name" Height="30" BorderThickness="1,0" BorderBrush="White" Foreground="White"></Label>
+                        </Grid>
+
+                        <Grid Grid.Column="1" Grid.Row="14">
+                            <TextBox Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                        </Grid>
+
+
+                        <Grid Grid.Column="0" Grid.Row="15" Background="#41b1e1">
+                            <Label VerticalAlignment="Center" Content="Middle Name" Height="30" BorderThickness="1,0,1,1" BorderBrush="White" Foreground="White"></Label>
+                        </Grid>
+
+                        <Grid Grid.Column="1" Grid.Row="15">
+                            <TextBox Height="30" Controls:TextBoxHelper.ClearTextButton="True" VerticalContentAlignment="Center"></TextBox>
+                        </Grid>
+
+                    </Grid>
+
+                    <Grid Grid.Column="1" Grid.Row="1">
+
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100*"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                                                
+                        <Grid Grid.Row="0">
+
+                            <ScrollViewer>
+
+                                <ListView x:Name="lvChild" >
+                                    <ListView.ItemContainerStyle>
+                                        <Style TargetType="ListViewItem">
+                                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                        </Style>
+                                    </ListView.ItemContainerStyle>
+                                    <ListView.View>
+                                        <GridView>
+
+
+
+                                            <GridViewColumn Width="40" >
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <CheckBox Content="{Binding nRow}" IsChecked="{Binding isSelect}" />
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+
+                                            <GridViewColumn  Header="Name" HeaderContainerStyle="{StaticResource hcs}" Width="190">
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock  Text=""></TextBlock>
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+
+                                            <GridViewColumn  Header="Birthday" HeaderContainerStyle="{StaticResource hcs}" Width="120">
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding Path=birthday, StringFormat='MM/dd/yyyy'}" TextAlignment="Center" HorizontalAlignment="Right"/>
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+
+                                            <GridViewColumn  Header="Taxable" HeaderContainerStyle="{StaticResource hcs}" Width="100">
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <CheckBox Content="{Binding nRow}" IsChecked="{Binding isSelect}" />
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+
+
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                                
+                            </ScrollViewer>
+                            
+                        </Grid>
+                        
+                        
+
+                        
+                    </Grid>
+                </Grid>
+                
+                
+            </TabItem>
+            <TabItem Name="tabEducation" Header="Educational Background"
+                                 Controls:ControlsHelper.HeaderFontSize="12" Margin="-1,0,1,0" GotFocus="tabEducation_GotFocus" >
+
+
+                <ScrollViewer>
+
+                    <ListView x:Name="lvEducation" >
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.View>
+                            <GridView>
+
+
+                                <GridViewColumn  Header="Level"  HeaderContainerStyle="{StaticResource hcs}" Width="190">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock  Text=""></TextBlock>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn  Header="Name of School" HeaderContainerStyle="{StaticResource hcs}" Width="220">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="" TextAlignment="Center" FontSize="10" HorizontalAlignment="Right"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn  Header="Degree Course"  HeaderContainerStyle="{StaticResource hcs}" Width="120">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="" TextAlignment="Center" FontSize="10" HorizontalAlignment="Right"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+
+                                <GridViewColumn  Header="Year Graduated"  HeaderContainerStyle="{StaticResource hcs}" Width="120">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="" TextAlignment="Center" FontSize="10" HorizontalAlignment="Right"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn  Header="Highest Units Earned" HeaderContainerStyle="{StaticResource hcs}" Width="120">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="" TextAlignment="Center" FontSize="10" HorizontalAlignment="Right"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn  Header="From" HeaderContainerStyle="{StaticResource hcs}" Width="60">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="" TextAlignment="Center" FontSize="10" HorizontalAlignment="Right"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn  Header="To" HeaderContainerStyle="{StaticResource hcs}" Width="60">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="" TextAlignment="Center" FontSize="10" HorizontalAlignment="Right"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn  Header="Scholarship" HeaderContainerStyle="{StaticResource hcs}" Width="160">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="" TextAlignment="Center" FontSize="10" HorizontalAlignment="Right"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+
+                </ScrollViewer>
+
+
+            </TabItem>
+            <TabItem Name="tabEligibility" Header="Eligibility"
+                                 Controls:ControlsHelper.HeaderFontSize="12" GotFocus="tabEligibility_GotFocus">
+
+
+
+                <ScrollViewer>
+
+                    <ListView x:Name="lvEligibility" >
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.View>
+                            <GridView>
+
+
+                                <GridViewColumn  Header="Career Service"  HeaderContainerStyle="{StaticResource hcs}" Width="190">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock  Text=""></TextBlock>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn  Header="Rating" HeaderContainerStyle="{StaticResource hcs}" Width="220">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="" TextAlignment="Center" FontSize="10" HorizontalAlignment="Right"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn  Header="Date of Examination"  HeaderContainerStyle="{StaticResource hcs}" Width="120">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="" TextAlignment="Center" FontSize="10" HorizontalAlignment="Right"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+
+                                <GridViewColumn  Header="Place of examination"  HeaderContainerStyle="{StaticResource hcs}" Width="120">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="" TextAlignment="Center" FontSize="10" HorizontalAlignment="Right"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn  Header="License Number" HeaderContainerStyle="{StaticResource hcs}" Width="120">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="" TextAlignment="Center" FontSize="10" HorizontalAlignment="Right"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn  Header="Date Release" HeaderContainerStyle="{StaticResource hcs}" Width="60">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="" TextAlignment="Center" FontSize="10" HorizontalAlignment="Right"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+
+                </ScrollViewer>
+                
+            </TabItem>
+            <TabItem Name="tabWork" Header="Work Experience"
+                                 Controls:ControlsHelper.HeaderFontSize="12" GotFocus="tabWork_GotFocus">
+
+
+                <ScrollViewer>
+
+                    <ListView x:Name="lvWorkExperience" >
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.View>
+                            <GridView>
+
+
+                                <GridViewColumn  Header="From"  HeaderContainerStyle="{StaticResource hcs}" Width="100">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock  Text=""></TextBlock>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn  Header="To" HeaderContainerStyle="{StaticResource hcs}" Width="100">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="" TextAlignment="Center" FontSize="10" HorizontalAlignment="Right"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn  Header="Department"  HeaderContainerStyle="{StaticResource hcs}" Width="120">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="" TextAlignment="Center" FontSize="10" HorizontalAlignment="Right"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+
+                                <GridViewColumn  Header="Salary"  HeaderContainerStyle="{StaticResource hcs}" Width="120">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="" TextAlignment="Center" FontSize="10" HorizontalAlignment="Right"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn  Header="Status" HeaderContainerStyle="{StaticResource hcs}" Width="120">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="" TextAlignment="Center" FontSize="10" HorizontalAlignment="Right"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+
+                </ScrollViewer>
+                
+                
+            </TabItem>
+            <TabItem Name="tabVoluntary" Header="Voluntary Work"
+                                 Controls:ControlsHelper.HeaderFontSize="12" GotFocus="tabVoluntary_GotFocus">
+
+
+                <ScrollViewer>
+
+                    <ListView x:Name="lvVoluntary" >
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.View>
+                            <GridView>
+
+
+                                <GridViewColumn  Header="Name of Organization"  HeaderContainerStyle="{StaticResource hcs}" Width="200">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock  Text=""></TextBlock>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn  Header="From" HeaderContainerStyle="{StaticResource hcs}" Width="100">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="" TextAlignment="Center" FontSize="10" HorizontalAlignment="Right"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn  Header="To"  HeaderContainerStyle="{StaticResource hcs}" Width="100">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="" TextAlignment="Center" FontSize="10" HorizontalAlignment="Right"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+
+                                <GridViewColumn  Header="Number of hours"  HeaderContainerStyle="{StaticResource hcs}" Width="120">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="" TextAlignment="Center" FontSize="10" HorizontalAlignment="Right"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn  Header="Position" HeaderContainerStyle="{StaticResource hcs}" Width="220">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="" TextAlignment="Center" FontSize="10" HorizontalAlignment="Right"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+
+                </ScrollViewer>
+                
+            </TabItem>
+            <TabItem Name="tabTraining" Header="Trainings"
+                                 Controls:ControlsHelper.HeaderFontSize="12" GotFocus="tabTraining_GotFocus">
+
+
+                <ScrollViewer>
+
+                    <ListView x:Name="lvTraining" >
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.View>
+                            <GridView>
+
+
+                                <GridViewColumn  Header="Title of Seminar"  HeaderContainerStyle="{StaticResource hcs}" Width="200">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock  Text=""></TextBlock>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn  Header="From" HeaderContainerStyle="{StaticResource hcs}" Width="100">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="" TextAlignment="Center" FontSize="10" HorizontalAlignment="Right"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn  Header="To"  HeaderContainerStyle="{StaticResource hcs}" Width="100">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="" TextAlignment="Center" FontSize="10" HorizontalAlignment="Right"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+
+                                <GridViewColumn  Header="Number of hours"  HeaderContainerStyle="{StaticResource hcs}" Width="120">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="" TextAlignment="Center" FontSize="10" HorizontalAlignment="Right"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn  Header="Sponsored by" HeaderContainerStyle="{StaticResource hcs}" Width="220">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="" TextAlignment="Center" FontSize="10" HorizontalAlignment="Right"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+
+                </ScrollViewer>
+                
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+
+
+
+
+</Controls:MetroWindow>
+

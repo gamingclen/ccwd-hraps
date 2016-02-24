@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PAWDModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="PAWDModelStoreContainer">
+    <EntitySet Name="bank" EntityType="PAWDModel.Store.bank" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="bundle_type" EntityType="PAWDModel.Store.bundle_type" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="candidate" EntityType="PAWDModel.Store.candidate" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="candidate_position" EntityType="PAWDModel.Store.candidate_position" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="district" EntityType="PAWDModel.Store.district" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="official_receipt" EntityType="PAWDModel.Store.official_receipt" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="or_particular" EntityType="PAWDModel.Store.or_particular" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="or_person" EntityType="PAWDModel.Store.or_person" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="position" EntityType="PAWDModel.Store.position" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="region" EntityType="PAWDModel.Store.region" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="transaction" EntityType="PAWDModel.Store.transaction" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="transaction_type" EntityType="PAWDModel.Store.transaction_type" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="user" EntityType="PAWDModel.Store.user" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="user_access" EntityType="PAWDModel.Store.user_access" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="visitor" EntityType="PAWDModel.Store.visitor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="voter" EntityType="PAWDModel.Store.voter" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="votes" EntityType="PAWDModel.Store.votes" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="bank">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="150" />
+    <Property Name="acro" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="bundle_type">
+    <Key>
+      <PropertyRef Name="bundleType" />
+    </Key>
+    <Property Name="bundleType" Type="int" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="candidate">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="fullname" Type="nvarchar" MaxLength="150" />
+    <Property Name="pos_id" Type="int" />
+    <Property Name="wd" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="candidate_position">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="district">
+    <Key>
+      <PropertyRef Name="districtID" />
+    </Key>
+    <Property Name="districtID" Type="int" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="350" />
+    <Property Name="region" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="official_receipt">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="orNo" Type="int" />
+    <Property Name="districtID" Type="int" />
+    <Property Name="dDate" Type="datetime" />
+    <Property Name="nAmount" Type="decimal" Scale="2" />
+    <Property Name="sPeso" Type="nvarchar" MaxLength="450" />
+    <Property Name="sBank" Type="nvarchar" MaxLength="150" />
+    <Property Name="sCheckNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="dDateIssued" Type="datetime" />
+    <Property Name="nType" Type="int" />
+    <Property Name="bundleType" Type="int" />
+    <Property Name="nTotal" Type="decimal" Scale="2" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" />
+    <Property Name="nCancel" Type="int" />
+  </EntityType>
+  <EntityType Name="or_particular">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="orNo" Type="int" />
+    <Property Name="transaction_id" Type="int" />
+  </EntityType>
+  <EntityType Name="or_person">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="orNo" Type="int" />
+    <Property Name="visitorID" Type="int" />
+  </EntityType>
+  <EntityType Name="position">
+    <Key>
+      <PropertyRef Name="sPositionID" />
+    </Key>
+    <Property Name="sPositionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Position" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="region">
+    <Key>
+      <PropertyRef Name="regionID" />
+    </Key>
+    <Property Name="regionID" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="description" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="transaction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" />
+    <Property Name="nAmount" Type="decimal" Scale="2" />
+    <Property Name="acro" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="transaction_type">
+    <Key>
+      <PropertyRef Name="nType" />
+    </Key>
+    <Property Name="nType" Type="int" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
+    <Property Name="orNo" Type="int" />
+    <Property Name="name" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="user_access">
+    <Key>
+      <PropertyRef Name="int" />
+    </Key>
+    <Property Name="int" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" />
+    <Property Name="access" Type="int" />
+  </EntityType>
+  <EntityType Name="visitor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fName" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="mName" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="lName" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="nName" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="position" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="districtID" Type="int" Nullable="false" />
+    <Property Name="nNum" Type="int" />
+    <Property Name="preReg" Type="int" />
+    <Property Name="withPay" Type="int" />
+  </EntityType>
+  <EntityType Name="voter">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="visitorID" Type="int" />
+    <Property Name="nVote" Type="int" />
+    <Property Name="candidateID" Type="int" />
+  </EntityType>
+  <EntityType Name="votes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="candidateID" Type="int" />
+    <Property Name="voterID" Type="int" />
+  </EntityType>
+  <Function Name="access_validation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="username" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="cancelOR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="orNo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="changeOR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="username" Type="nvarchar" Mode="In" />
+    <Parameter Name="orNo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="deleteVisitor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="drawRaffle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="fastUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="orNo" Type="int" Mode="In" />
+    <Parameter Name="oldOR" Type="int" Mode="In" />
+  </Function>
+  <Function Name="insertOfficial_Receipt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="orNo" Type="int" Mode="In" />
+    <Parameter Name="districtID" Type="int" Mode="In" />
+    <Parameter Name="dDate" Type="datetime" Mode="In" />
+    <Parameter Name="nAmount" Type="decimal" Mode="In" />
+    <Parameter Name="sPeso" Type="nvarchar" Mode="In" />
+    <Parameter Name="sBank" Type="nvarchar" Mode="In" />
+    <Parameter Name="sCheckNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="dDateIssued" Type="datetime" Mode="In" />
+    <Parameter Name="nType" Type="int" Mode="In" />
+    <Parameter Name="bundleType" Type="int" Mode="In" />
+    <Parameter Name="nTotal" Type="decimal" Mode="In" />
+    <Parameter Name="username" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="insertOR_Particular" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="orNo" Type="int" Mode="In" />
+    <Parameter Name="transaction_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="insertOR_Person" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="orNo" Type="int" Mode="In" />
+    <Parameter Name="visitorID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="insertPosition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="description" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="insertUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="username" Type="nvarchar" Mode="In" />
+    <Parameter Name="password" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="insertUser_Access" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="username" Type="nvarchar" Mode="In" />
+    <Parameter Name="access" Type="int" Mode="In" />
+  </Function>
+  <Function Name="insertVisitor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fName" Type="nvarchar" Mode="In" />
+    <Parameter Name="mName" Type="nvarchar" Mode="In" />
+    <Parameter Name="lName" Type="nvarchar" Mode="In" />
+    <Parameter Name="nName" Type="nvarchar" Mode="In" />
+    <Parameter Name="position" Type="nvarchar" Mode="In" />
+    <Parameter Name="districtID" Type="int" Mode="In" />
+    <Parameter Name="preReg" Type="int" Mode="In" />
+  </Function>
+  <Function Name="insertVoter" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="visitorID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="username" Type="nvarchar" Mode="In" />
+    <Parameter Name="password" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="rptByAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="rptByAllSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="rptByBank" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sBank" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="rptByBankSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sBank" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="rptByBundle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="bundleType" Type="int" Mode="In" />
+  </Function>
+  <Function Name="rptByCounter" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="counterID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="rptByCounterSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="counterID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="rptByDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="dDateStart" Type="datetime" Mode="In" />
+    <Parameter Name="dDateEnd" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="rptByDateSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="dDateStart" Type="datetime" Mode="In" />
+    <Parameter Name="dDateEnd" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="rptByDistrict" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="districtID" Type="int" Mode="In" />
+    <Parameter Name="districtName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="rptByDistrictSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="districtID" Type="int" Mode="In" />
+    <Parameter Name="districtName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="rptByRegion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="region" Type="nvarchar" Mode="In" />
+    <Parameter Name="regionName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="rptByRegionSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="region" Type="nvarchar" Mode="In" />
+    <Parameter Name="regionName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="rptID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="orNo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="rptPollSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="rptWinner" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="searchOR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="search" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sendVote" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="candidateID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="udf_TitleCase" ReturnType="varchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="InputString" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="updateOR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="username" Type="nvarchar" Mode="In" />
+    <Parameter Name="orNo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="updateVisitor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="fName" Type="nvarchar" Mode="In" />
+    <Parameter Name="lName" Type="nvarchar" Mode="In" />
+    <Parameter Name="mName" Type="nvarchar" Mode="In" />
+    <Parameter Name="nName" Type="nvarchar" Mode="In" />
+    <Parameter Name="position" Type="nvarchar" Mode="In" />
+    <Parameter Name="districtID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="updateWithPay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="viewAccess_type" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="viewBank" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="viewCandidate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="viewCurrentVoter" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="viewDistrict" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="viewOR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="orNo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="viewORforID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="orNo" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="viewORParticular" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="orNo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="viewParticulars" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="viewPosition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="viewRaffle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="viewRegion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="viewTransaction" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="viewVisitor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="viewVisitorByDistrict" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="districtID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="viewVisitorFilter" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="filter" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="viewVisitorInDistrict" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="districtID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="viewWinner" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <!--Errors Found During Generation:
+      warning 6013: The table/view 'PAWD.dbo.access_type' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="access_type">
+        <Property Name="id" Type="int" />
+        <Property Name="description" Type="nvarchar" MaxLength="50" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'PAWD.dbo.asda' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="asda">
+        <Property Name="description" Type="nvarchar" MaxLength="50" />
+        <Property Name="asdas" Type="nvarchar" MaxLength="50" />
+      </EntityType>-->
+</Schema>

@@ -1,0 +1,775 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PAWDModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="PAWDEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="banks" EntityType="PAWDModel.bank" />
+    <EntitySet Name="bundle_type" EntityType="PAWDModel.bundle_type" />
+    <EntitySet Name="candidates" EntityType="PAWDModel.candidate" />
+    <EntitySet Name="candidate_position" EntityType="PAWDModel.candidate_position" />
+    <EntitySet Name="districts" EntityType="PAWDModel.district" />
+    <EntitySet Name="official_receipt" EntityType="PAWDModel.official_receipt" />
+    <EntitySet Name="or_particular" EntityType="PAWDModel.or_particular" />
+    <EntitySet Name="or_person" EntityType="PAWDModel.or_person" />
+    <EntitySet Name="positions" EntityType="PAWDModel.position" />
+    <EntitySet Name="regions" EntityType="PAWDModel.region" />
+    <EntitySet Name="transactions" EntityType="PAWDModel.transaction" />
+    <EntitySet Name="transaction_type" EntityType="PAWDModel.transaction_type" />
+    <EntitySet Name="users" EntityType="PAWDModel.user" />
+    <EntitySet Name="user_access" EntityType="PAWDModel.user_access" />
+    <EntitySet Name="visitors" EntityType="PAWDModel.visitor" />
+    <EntitySet Name="voters" EntityType="PAWDModel.voter" />
+    <EntitySet Name="votes" EntityType="PAWDModel.vote" />
+    <FunctionImport Name="access_validation" ReturnType="Collection(PAWDModel.access_validation_Result)">
+      <Parameter Name="username" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="cancelOR">
+      <Parameter Name="orNo" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="changeOR">
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="orNo" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="deleteVisitor">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="drawRaffle" ReturnType="Collection(PAWDModel.drawRaffle_Result)" />
+    <FunctionImport Name="fastUpdate">
+      <Parameter Name="orNo" Mode="In" Type="Int32" />
+      <Parameter Name="oldOR" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="insertOfficial_Receipt">
+      <Parameter Name="orNo" Mode="In" Type="Int32" />
+      <Parameter Name="districtID" Mode="In" Type="Int32" />
+      <Parameter Name="dDate" Mode="In" Type="DateTime" />
+      <Parameter Name="nAmount" Mode="In" Type="Decimal" />
+      <Parameter Name="sPeso" Mode="In" Type="String" />
+      <Parameter Name="sBank" Mode="In" Type="String" />
+      <Parameter Name="sCheckNo" Mode="In" Type="String" />
+      <Parameter Name="dDateIssued" Mode="In" Type="DateTime" />
+      <Parameter Name="nType" Mode="In" Type="Int32" />
+      <Parameter Name="bundleType" Mode="In" Type="Int32" />
+      <Parameter Name="nTotal" Mode="In" Type="Decimal" />
+      <Parameter Name="username" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="insertOR_Particular">
+      <Parameter Name="orNo" Mode="In" Type="Int32" />
+      <Parameter Name="transaction_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="insertOR_Person">
+      <Parameter Name="orNo" Mode="In" Type="Int32" />
+      <Parameter Name="visitorID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="insertPosition">
+      <Parameter Name="description" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="insertUser">
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="insertUser_Access">
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="access" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="insertVisitor">
+      <Parameter Name="fName" Mode="In" Type="String" />
+      <Parameter Name="mName" Mode="In" Type="String" />
+      <Parameter Name="lName" Mode="In" Type="String" />
+      <Parameter Name="nName" Mode="In" Type="String" />
+      <Parameter Name="position" Mode="In" Type="String" />
+      <Parameter Name="districtID" Mode="In" Type="Int32" />
+      <Parameter Name="preReg" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="insertVoter">
+      <Parameter Name="visitorID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="login" ReturnType="Collection(PAWDModel.login_Result)">
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="rptByAll" ReturnType="Collection(PAWDModel.rptByAll_Result)" />
+    <FunctionImport Name="rptByAllSummary" ReturnType="Collection(PAWDModel.rptByAllSummary_Result)" />
+    <FunctionImport Name="rptByBank" ReturnType="Collection(PAWDModel.rptByBank_Result)">
+      <Parameter Name="sBank" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="rptByBankSummary" ReturnType="Collection(PAWDModel.rptByBankSummary_Result)">
+      <Parameter Name="sBank" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="rptByBundle" ReturnType="Collection(PAWDModel.rptByBundle_Result)">
+      <Parameter Name="bundleType" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="rptByCounter" ReturnType="Collection(PAWDModel.rptByCounter_Result)">
+      <Parameter Name="counterID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="rptByCounterSummary" ReturnType="Collection(PAWDModel.rptByCounterSummary_Result)">
+      <Parameter Name="counterID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="rptByDate" ReturnType="Collection(PAWDModel.rptByDate_Result)">
+      <Parameter Name="dDateStart" Mode="In" Type="DateTime" />
+      <Parameter Name="dDateEnd" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="rptByDateSummary" ReturnType="Collection(PAWDModel.rptByDateSummary_Result)">
+      <Parameter Name="dDateStart" Mode="In" Type="DateTime" />
+      <Parameter Name="dDateEnd" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="rptByDistrict" ReturnType="Collection(PAWDModel.rptByDistrict_Result)">
+      <Parameter Name="districtID" Mode="In" Type="Int32" />
+      <Parameter Name="districtName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="rptByDistrictSummary" ReturnType="Collection(PAWDModel.rptByDistrictSummary_Result)">
+      <Parameter Name="districtID" Mode="In" Type="Int32" />
+      <Parameter Name="districtName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="rptByRegion" ReturnType="Collection(PAWDModel.rptByRegion_Result)">
+      <Parameter Name="region" Mode="In" Type="String" />
+      <Parameter Name="regionName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="rptByRegionSummary" ReturnType="Collection(PAWDModel.rptByRegionSummary_Result)">
+      <Parameter Name="region" Mode="In" Type="String" />
+      <Parameter Name="regionName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="rptID" ReturnType="Collection(PAWDModel.rptID_Result)">
+      <Parameter Name="orNo" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="rptPollSummary" ReturnType="Collection(PAWDModel.rptPollSummary_Result)" />
+    <FunctionImport Name="rptWinner" ReturnType="Collection(PAWDModel.rptWinner_Result)" />
+    <FunctionImport Name="searchOR" ReturnType="Collection(PAWDModel.searchOR_Result)">
+      <Parameter Name="search" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sendVote">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="candidateID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="updateOR">
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="orNo" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="updateVisitor">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="fName" Mode="In" Type="String" />
+      <Parameter Name="lName" Mode="In" Type="String" />
+      <Parameter Name="mName" Mode="In" Type="String" />
+      <Parameter Name="nName" Mode="In" Type="String" />
+      <Parameter Name="position" Mode="In" Type="String" />
+      <Parameter Name="districtID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="updateWithPay">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="viewAccess_type" ReturnType="Collection(PAWDModel.viewAccess_type_Result)" />
+    <FunctionImport Name="viewBank" ReturnType="Collection(PAWDModel.viewBank_Result)" />
+    <FunctionImport Name="viewCandidate" ReturnType="Collection(PAWDModel.viewCandidate_Result)" />
+    <FunctionImport Name="viewCurrentVoter" ReturnType="Collection(PAWDModel.viewCurrentVoter_Result)" />
+    <FunctionImport Name="viewDistrict" ReturnType="Collection(PAWDModel.viewDistrict_Result)" />
+    <FunctionImport Name="viewOR" ReturnType="Collection(PAWDModel.viewOR_Result)">
+      <Parameter Name="orNo" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="viewORforID" ReturnType="Collection(PAWDModel.viewORforID_Result)">
+      <Parameter Name="orNo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="viewORParticular" ReturnType="Collection(PAWDModel.viewORParticular_Result)">
+      <Parameter Name="orNo" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="viewParticulars" ReturnType="Collection(PAWDModel.viewParticulars_Result)" />
+    <FunctionImport Name="viewPosition" ReturnType="Collection(PAWDModel.viewPosition_Result)" />
+    <FunctionImport Name="viewRaffle" ReturnType="Collection(PAWDModel.viewRaffle_Result)" />
+    <FunctionImport Name="viewRegion" ReturnType="Collection(PAWDModel.viewRegion_Result)" />
+    <FunctionImport Name="viewTransaction" ReturnType="Collection(PAWDModel.viewTransaction_Result)" />
+    <FunctionImport Name="viewVisitor" ReturnType="Collection(PAWDModel.viewVisitor_Result)" />
+    <FunctionImport Name="viewVisitorByDistrict" ReturnType="Collection(PAWDModel.viewVisitorByDistrict_Result)">
+      <Parameter Name="districtID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="viewVisitorFilter" ReturnType="Collection(PAWDModel.viewVisitorFilter_Result)">
+      <Parameter Name="filter" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="viewVisitorInDistrict" ReturnType="Collection(PAWDModel.viewVisitorInDistrict_Result)">
+      <Parameter Name="districtID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="viewWinner" ReturnType="Collection(PAWDModel.viewWinner_Result)" />
+  </EntityContainer>
+  <EntityType Name="bank">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="acro" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="bundle_type">
+    <Key>
+      <PropertyRef Name="bundleType" />
+    </Key>
+    <Property Name="bundleType" Type="Int32" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="candidate">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="fullname" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="pos_id" Type="Int32" />
+    <Property Name="wd" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="candidate_position">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="district">
+    <Key>
+      <PropertyRef Name="districtID" />
+    </Key>
+    <Property Name="districtID" Type="Int32" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="350" Unicode="true" FixedLength="false" />
+    <Property Name="region" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="official_receipt">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="orNo" Type="Int32" />
+    <Property Name="districtID" Type="Int32" />
+    <Property Name="dDate" Type="DateTime" Precision="3" />
+    <Property Name="nAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="sPeso" Type="String" MaxLength="450" Unicode="true" FixedLength="false" />
+    <Property Name="sBank" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="sCheckNo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="dDateIssued" Type="DateTime" Precision="3" />
+    <Property Name="nType" Type="Int32" />
+    <Property Name="bundleType" Type="Int32" />
+    <Property Name="nTotal" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="username" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="nCancel" Type="Int32" />
+  </EntityType>
+  <EntityType Name="or_particular">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="orNo" Type="Int32" />
+    <Property Name="transaction_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="or_person">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="orNo" Type="Int32" />
+    <Property Name="visitorID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="position">
+    <Key>
+      <PropertyRef Name="sPositionID" />
+    </Key>
+    <Property Name="sPositionID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Position1" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="region">
+    <Key>
+      <PropertyRef Name="regionID" />
+    </Key>
+    <Property Name="regionID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="description" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="transaction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="nAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="acro" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="transaction_type">
+    <Key>
+      <PropertyRef Name="nType" />
+    </Key>
+    <Property Name="nType" Type="Int32" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="password" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="orNo" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="user_access">
+    <Key>
+      <PropertyRef Name="int" />
+    </Key>
+    <Property Name="int" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="access" Type="Int32" />
+  </EntityType>
+  <EntityType Name="visitor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="fName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="mName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="lName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="nName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="position" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="districtID" Type="Int32" Nullable="false" />
+    <Property Name="nNum" Type="Int32" />
+    <Property Name="preReg" Type="Int32" />
+    <Property Name="withPay" Type="Int32" />
+  </EntityType>
+  <EntityType Name="voter">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="visitorID" Type="Int32" />
+    <Property Name="nVote" Type="Int32" />
+    <Property Name="candidateID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="vote">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="candidateID" Type="Int32" />
+    <Property Name="voterID" Type="Int32" />
+  </EntityType>
+  <ComplexType Name="access_validation_Result">
+    <Property Type="Int32" Name="access_registration" Nullable="true" />
+    <Property Type="Int32" Name="access_billing" Nullable="true" />
+    <Property Type="Int32" Name="access_id" Nullable="true" />
+    <Property Type="Int32" Name="access_voting" Nullable="true" />
+    <Property Type="Int32" Name="access_raffle" Nullable="true" />
+    <Property Type="Int32" Name="access_reports" Nullable="true" />
+    <Property Type="Int32" Name="access_settings" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="drawRaffle_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="sFullname" Nullable="true" MaxLength="514" />
+    <Property Type="String" Name="sWD" Nullable="true" MaxLength="350" />
+  </ComplexType>
+  <ComplexType Name="login_Result">
+    <Property Type="String" Name="username" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="password" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="orNo" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="rptByAll_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="orNo" Nullable="true" />
+    <Property Type="Int32" Name="visitorID" Nullable="true" />
+    <Property Type="Int32" Name="id1" Nullable="false" />
+    <Property Type="Int32" Name="orNo1" Nullable="true" />
+    <Property Type="Int32" Name="districtID" Nullable="true" />
+    <Property Type="DateTime" Name="dDate" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="nAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="sPeso" Nullable="true" MaxLength="450" />
+    <Property Type="String" Name="sBank" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="sCheckNo" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="dDateIssued" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="nType" Nullable="true" />
+    <Property Type="Int32" Name="bundleType" Nullable="true" />
+    <Property Type="Decimal" Name="nTotal" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="username" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="nCancel" Nullable="true" />
+    <Property Type="String" Name="sFullname" Nullable="true" MaxLength="514" />
+    <Property Type="Decimal" Name="c" Nullable="true" Precision="29" Scale="13" />
+    <Property Type="String" Name="districtName" Nullable="true" MaxLength="350" />
+    <Property Type="Int64" Name="nRow" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="rptByAllSummary_Result">
+    <Property Type="Int32" Name="districtID" Nullable="true" />
+    <Property Type="String" Name="districtName" Nullable="true" MaxLength="350" />
+    <Property Type="String" Name="region" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="noDeligates" Nullable="true" />
+    <Property Type="Decimal" Name="nTotal" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="rptByBank_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="orNo" Nullable="true" />
+    <Property Type="Int32" Name="visitorID" Nullable="true" />
+    <Property Type="Int32" Name="id1" Nullable="false" />
+    <Property Type="Int32" Name="orNo1" Nullable="true" />
+    <Property Type="Int32" Name="districtID" Nullable="true" />
+    <Property Type="DateTime" Name="dDate" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="nAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="sPeso" Nullable="true" MaxLength="450" />
+    <Property Type="String" Name="sBank" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="sCheckNo" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="dDateIssued" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="nType" Nullable="true" />
+    <Property Type="Int32" Name="bundleType" Nullable="true" />
+    <Property Type="Decimal" Name="nTotal" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="username" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="nCancel" Nullable="true" />
+    <Property Type="String" Name="bankName" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="sFullname" Nullable="true" MaxLength="514" />
+    <Property Type="Decimal" Name="c" Nullable="true" Precision="29" Scale="13" />
+    <Property Type="String" Name="districtName" Nullable="true" MaxLength="350" />
+  </ComplexType>
+  <ComplexType Name="rptByBankSummary_Result">
+    <Property Type="Int32" Name="districtID" Nullable="true" />
+    <Property Type="String" Name="bankName" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="districtName" Nullable="true" MaxLength="350" />
+    <Property Type="String" Name="region" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="noDeligates" Nullable="true" />
+    <Property Type="Decimal" Name="nTotal" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="rptByBundle_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="orNo" Nullable="true" />
+    <Property Type="Int32" Name="visitorID" Nullable="true" />
+    <Property Type="Int32" Name="id1" Nullable="false" />
+    <Property Type="Int32" Name="orNo1" Nullable="true" />
+    <Property Type="Int32" Name="districtID" Nullable="true" />
+    <Property Type="DateTime" Name="dDate" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="nAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="sPeso" Nullable="true" MaxLength="450" />
+    <Property Type="String" Name="sBank" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="sCheckNo" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="dDateIssued" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="nType" Nullable="true" />
+    <Property Type="Int32" Name="bundleType" Nullable="true" />
+    <Property Type="Decimal" Name="nTotal" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="username" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="nCancel" Nullable="true" />
+    <Property Type="String" Name="sFullname" Nullable="true" MaxLength="514" />
+  </ComplexType>
+  <ComplexType Name="rptByCounter_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="orNo" Nullable="true" />
+    <Property Type="Int32" Name="visitorID" Nullable="true" />
+    <Property Type="Int32" Name="id1" Nullable="false" />
+    <Property Type="Int32" Name="orNo1" Nullable="true" />
+    <Property Type="Int32" Name="districtID" Nullable="true" />
+    <Property Type="DateTime" Name="dDate" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="nAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="sPeso" Nullable="true" MaxLength="450" />
+    <Property Type="String" Name="sBank" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="sCheckNo" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="dDateIssued" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="nType" Nullable="true" />
+    <Property Type="Int32" Name="bundleType" Nullable="true" />
+    <Property Type="Decimal" Name="nTotal" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="username" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="nCancel" Nullable="true" />
+    <Property Type="String" Name="sFullname" Nullable="true" MaxLength="514" />
+    <Property Type="Decimal" Name="c" Nullable="true" Precision="29" Scale="13" />
+    <Property Type="String" Name="districtName" Nullable="true" MaxLength="350" />
+  </ComplexType>
+  <ComplexType Name="rptByCounterSummary_Result">
+    <Property Type="Int32" Name="districtID" Nullable="true" />
+    <Property Type="String" Name="counterUser" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="districtName" Nullable="true" MaxLength="350" />
+    <Property Type="String" Name="region" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="noDeligates" Nullable="true" />
+    <Property Type="Decimal" Name="nTotal" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="rptByDate_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="orNo" Nullable="true" />
+    <Property Type="Int32" Name="visitorID" Nullable="true" />
+    <Property Type="Int32" Name="id1" Nullable="false" />
+    <Property Type="Int32" Name="orNo1" Nullable="true" />
+    <Property Type="Int32" Name="districtID" Nullable="true" />
+    <Property Type="DateTime" Name="dDate" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="nAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="sPeso" Nullable="true" MaxLength="450" />
+    <Property Type="String" Name="sBank" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="sCheckNo" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="dDateIssued" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="nType" Nullable="true" />
+    <Property Type="Int32" Name="bundleType" Nullable="true" />
+    <Property Type="Decimal" Name="nTotal" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="username" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="nCancel" Nullable="true" />
+    <Property Type="String" Name="sFullname" Nullable="true" MaxLength="514" />
+    <Property Type="Decimal" Name="c" Nullable="true" Precision="29" Scale="13" />
+    <Property Type="String" Name="districtName" Nullable="true" MaxLength="350" />
+    <Property Type="DateTime" Name="dStart" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="dEnd" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="rptByDateSummary_Result">
+    <Property Type="Int32" Name="districtID" Nullable="true" />
+    <Property Type="String" Name="districtName" Nullable="true" MaxLength="350" />
+    <Property Type="String" Name="region" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="noDeligates" Nullable="true" />
+    <Property Type="Decimal" Name="nTotal" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="dStart" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="dEnd" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="rptByDistrict_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="orNo" Nullable="true" />
+    <Property Type="Int32" Name="visitorID" Nullable="true" />
+    <Property Type="Int32" Name="id1" Nullable="false" />
+    <Property Type="Int32" Name="orNo1" Nullable="true" />
+    <Property Type="Int32" Name="districtID" Nullable="true" />
+    <Property Type="DateTime" Name="dDate" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="nAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="sPeso" Nullable="true" MaxLength="450" />
+    <Property Type="String" Name="sBank" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="sCheckNo" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="dDateIssued" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="nType" Nullable="true" />
+    <Property Type="Int32" Name="bundleType" Nullable="true" />
+    <Property Type="Decimal" Name="nTotal" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="username" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="nCancel" Nullable="true" />
+    <Property Type="String" Name="sFullname" Nullable="true" MaxLength="514" />
+    <Property Type="Decimal" Name="c" Nullable="true" Precision="29" Scale="13" />
+    <Property Type="String" Name="districtName" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="rptByDistrictSummary_Result">
+    <Property Type="String" Name="districtName" Nullable="true" MaxLength="350" />
+    <Property Type="String" Name="region" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="noDeligates" Nullable="true" />
+    <Property Type="Decimal" Name="nTotal" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="districtName1" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="rptByRegion_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="orNo" Nullable="true" />
+    <Property Type="Int32" Name="visitorID" Nullable="true" />
+    <Property Type="Int32" Name="id1" Nullable="false" />
+    <Property Type="Int32" Name="orNo1" Nullable="true" />
+    <Property Type="Int32" Name="districtID" Nullable="true" />
+    <Property Type="DateTime" Name="dDate" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="nAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="sPeso" Nullable="true" MaxLength="450" />
+    <Property Type="String" Name="sBank" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="sCheckNo" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="dDateIssued" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="nType" Nullable="true" />
+    <Property Type="Int32" Name="bundleType" Nullable="true" />
+    <Property Type="Decimal" Name="nTotal" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="username" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="nCancel" Nullable="true" />
+    <Property Type="Int32" Name="id2" Nullable="false" />
+    <Property Type="String" Name="fName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="mName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="lName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="nName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="position" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="districtID1" Nullable="false" />
+    <Property Type="Int32" Name="nNum" Nullable="true" />
+    <Property Type="Int32" Name="preReg" Nullable="true" />
+    <Property Type="Int32" Name="withPay" Nullable="true" />
+    <Property Type="Int32" Name="districtID2" Nullable="false" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="350" />
+    <Property Type="String" Name="region" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="sFullname" Nullable="true" MaxLength="514" />
+    <Property Type="Decimal" Name="c" Nullable="true" Precision="29" Scale="13" />
+    <Property Type="String" Name="regionName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="districtName" Nullable="true" MaxLength="350" />
+  </ComplexType>
+  <ComplexType Name="rptByRegionSummary_Result">
+    <Property Type="Int32" Name="districtID" Nullable="true" />
+    <Property Type="String" Name="districtName" Nullable="true" MaxLength="350" />
+    <Property Type="String" Name="region" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="noDeligates" Nullable="true" />
+    <Property Type="Decimal" Name="nTotal" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="rptID_Result">
+    <Property Type="String" Name="nickName" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="fullName" Nullable="true" MaxLength="514" />
+    <Property Type="String" Name="district" Nullable="true" MaxLength="350" />
+    <Property Type="String" Name="position" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="rptPollSummary_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="visitorID" Nullable="true" />
+    <Property Type="Int32" Name="nVote" Nullable="true" />
+    <Property Type="Int32" Name="candidateID" Nullable="true" />
+    <Property Type="Int32" Name="id1" Nullable="false" />
+    <Property Type="String" Name="fName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="mName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="lName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="nName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="position" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="districtID" Nullable="false" />
+    <Property Type="Int32" Name="nNum" Nullable="true" />
+    <Property Type="Int32" Name="preReg" Nullable="true" />
+    <Property Type="Int32" Name="withPay" Nullable="true" />
+    <Property Type="Int32" Name="id2" Nullable="false" />
+    <Property Type="String" Name="fullname" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="pos_id" Nullable="true" />
+    <Property Type="String" Name="wd" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="sFullname" Nullable="true" MaxLength="514" />
+  </ComplexType>
+  <ComplexType Name="rptWinner_Result">
+    <Property Type="String" Name="fullname" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="wd" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="noVotes" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="searchOR_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="orNo" Nullable="true" />
+    <Property Type="String" Name="lName" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="districtID" Nullable="true" />
+    <Property Type="DateTime" Name="dDate" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="nAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="sPeso" Nullable="true" MaxLength="450" />
+    <Property Type="String" Name="sBank" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="sCheckNo" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="dDateIssued" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="nType" Nullable="true" />
+    <Property Type="Int32" Name="bundleType" Nullable="true" />
+    <Property Type="Decimal" Name="nTotal" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="username" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="nCancel" Nullable="true" />
+    <Property Type="Int32" Name="Expr1" Nullable="false" />
+    <Property Type="Int32" Name="Expr2" Nullable="true" />
+    <Property Type="Int32" Name="visitorID" Nullable="true" />
+    <Property Type="Int32" Name="Expr3" Nullable="false" />
+    <Property Type="String" Name="fName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="mName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="nName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="position" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="Expr4" Nullable="false" />
+    <Property Type="Int32" Name="nNum" Nullable="true" />
+    <Property Type="Int32" Name="preReg" Nullable="true" />
+    <Property Type="Int32" Name="withPay" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="viewAccess_type_Result">
+    <Property Type="Int32" Name="id" Nullable="true" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="isSelect" Nullable="false" MaxLength="4" />
+  </ComplexType>
+  <ComplexType Name="viewBank_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="acro" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="viewCandidate_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="fullname" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="pos_id" Nullable="true" />
+    <Property Type="String" Name="wd" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="viewCurrentVoter_Result">
+    <Property Type="Int32" Name="visitorID" Nullable="true" />
+    <Property Type="String" Name="sFullname" Nullable="true" MaxLength="516" />
+  </ComplexType>
+  <ComplexType Name="viewDistrict_Result">
+    <Property Type="Int32" Name="districtID" Nullable="false" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="403" />
+  </ComplexType>
+  <ComplexType Name="viewOR_Result">
+    <Property Type="DateTime" Name="dDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="receivedFrom" Nullable="true" MaxLength="350" />
+    <Property Type="String" Name="sPeso" Nullable="true" MaxLength="450" />
+    <Property Type="Decimal" Name="nTotal" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="payment" Nullable="false" MaxLength="23" />
+    <Property Type="String" Name="sCheckNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="sBank" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="dDateIssued" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="bundleType" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="viewORforID_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="orNo" Nullable="true" />
+    <Property Type="Int32" Name="districtID" Nullable="true" />
+    <Property Type="DateTime" Name="dDate" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="nAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="sPeso" Nullable="true" MaxLength="450" />
+    <Property Type="String" Name="sBank" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="sCheckNo" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="dDateIssued" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="nType" Nullable="true" />
+    <Property Type="Int32" Name="bundleType" Nullable="true" />
+    <Property Type="Decimal" Name="nTotal" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="username" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="nCancel" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="viewORParticular_Result">
+    <Property Type="Int32" Name="orNo" Nullable="true" />
+    <Property Type="String" Name="particulars" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="nAmount" Nullable="true" Precision="29" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="viewParticulars_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="nAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="acro" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="isSelect" Nullable="false" MaxLength="4" />
+  </ComplexType>
+  <ComplexType Name="viewPosition_Result">
+    <Property Type="Int32" Name="sPositionID" Nullable="false" />
+    <Property Type="String" Name="Position" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="viewRaffle_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="sFullname" Nullable="true" MaxLength="514" />
+    <Property Type="String" Name="sWD" Nullable="true" MaxLength="350" />
+  </ComplexType>
+  <ComplexType Name="viewRegion_Result">
+    <Property Type="String" Name="regionID" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="viewTransaction_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="nAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="acro" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="viewVisitor_Result">
+    <Property Type="String" Name="sFullname" Nullable="false" MaxLength="768" />
+    <Property Type="String" Name="lName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="fName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="mName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="nName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="position" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="districtID" Nullable="false" />
+    <Property Type="String" Name="sWD" Nullable="true" MaxLength="350" />
+  </ComplexType>
+  <ComplexType Name="viewVisitorByDistrict_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="fName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="mName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="lName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="nName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="position" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="districtID" Nullable="false" />
+    <Property Type="Int32" Name="nNum" Nullable="true" />
+    <Property Type="Int32" Name="preReg" Nullable="true" />
+    <Property Type="Int32" Name="withPay" Nullable="true" />
+    <Property Type="String" Name="sFullname" Nullable="false" MaxLength="768" />
+    <Property Type="String" Name="isSelect" Nullable="false" MaxLength="4" />
+    <Property Type="Int64" Name="nRow" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="viewVisitorFilter_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="sFullname" Nullable="false" MaxLength="768" />
+    <Property Type="String" Name="lName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="fName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="mName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="nName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="position" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="preReg" Nullable="true" />
+    <Property Type="Int32" Name="paid" Nullable="true" />
+    <Property Type="Int32" Name="districtID" Nullable="false" />
+    <Property Type="String" Name="sWD" Nullable="true" MaxLength="350" />
+  </ComplexType>
+  <ComplexType Name="viewVisitorInDistrict_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="fName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="mName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="lName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="nName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="position" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="districtID" Nullable="false" />
+    <Property Type="Int32" Name="nNum" Nullable="true" />
+    <Property Type="Int32" Name="preReg" Nullable="true" />
+    <Property Type="Int32" Name="withPay" Nullable="true" />
+    <Property Type="String" Name="sFullname" Nullable="false" MaxLength="768" />
+  </ComplexType>
+  <ComplexType Name="viewWinner_Result">
+    <Property Type="Int32" Name="pres1" Nullable="true" />
+    <Property Type="Int32" Name="pres2" Nullable="true" />
+  </ComplexType>
+</Schema>
