@@ -46,7 +46,7 @@
         	    VerticalAlignment="Top" Width="130" Height="130" Background="#FFF79973" ToolTip="Payroll" Margin="135,0,-29,0">
                     <StackPanel>
                         <Image Source="Pictures/payroll.png" Width="90" Height="90" />
-                        <TextBlock Text="Payroll" TextAlignment="Center" FontSize="15" Foreground="White"></TextBlock>
+                        <TextBlock Text="Payrollssss" TextAlignment="Center" FontSize="15" Foreground="White"></TextBlock>
                     </StackPanel>
                 </Button>
 
